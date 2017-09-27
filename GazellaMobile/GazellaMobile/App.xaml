@@ -2,9 +2,37 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GazellaMobile.App">
-	<Application.Resources>
+    <Application.Resources>
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="bgColor">
+                #064974
+            </Color>
+            <Color x:Key="textColor">
+                #f7ffff
+            </Color>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource bgColor }"/>
+                <Setter Property="TextColor" Value="{StaticResource textColor}"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <!--<Setter Property="BackgroundColor" Value="{StaticResource bgColor }"/>-->
+                <!--<Setter Property="TextColor" Value="{StaticResource textColor}"/>-->
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+            <Style x:Key="titleLabelStyle" TargetType="Label">
+                <!--<Setter Property="BackgroundColor" Value="{StaticResource bgColor }"/>-->
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#9eb4c2"/>
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <!--<Setter Property="BackgroundColor" Value="{StaticResource bgColor }"/>
+                <Setter Property="TextColor" Value="{StaticResource textColor}"/>-->
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
 
-		<!-- Application resource dictionary -->
-
-	</Application.Resources>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
