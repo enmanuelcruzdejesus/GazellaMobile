@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClubNaco.Models
+namespace GazellaMobile.Models
 {
 
     [Table("Users")]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GazellaMobile.Helpers
 {
-    public struct LoginStatus
+    public class LoginStatus
     {
         public bool IsValid { get; set; }
         public string Message { get; set; }

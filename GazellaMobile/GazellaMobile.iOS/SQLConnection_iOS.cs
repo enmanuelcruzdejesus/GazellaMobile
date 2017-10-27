@@ -30,7 +30,7 @@ namespace GazellaMobile.iOS
         {
             if (!File.Exists(dbPath))
             {
-                var sourcePath = NSBundle.MainBundle.PathForResource("CLUBNC_MOBILE", ".sqlite");
+                var sourcePath = NSBundle.MainBundle.PathForResource("GazellaMobile", ".sqlite");
                 File.Copy(sourcePath, dbPath);
             }
         }

@@ -29,7 +29,7 @@ namespace GazellaMobile.Helpers
         }
 
 
-        public async Task<HttpResponseMessage> GetResponse(string controller, int id)
+        public async Task<HttpResponseMessage> GetResponse(string controller, string id)
         {
             var uri = new Uri(String.Format(Url, controller, id));
             var response = await _client.GetAsync(uri);

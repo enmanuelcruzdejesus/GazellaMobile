@@ -3,19 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using Xamarin.Forms;
-using GazellaMobile.Helpers;
-using ClubNaco.Models;
-using Acr.UserDialogs;
 using System.Threading.Tasks;
+using Xamarin.Forms;
+
+using Acr.UserDialogs;
+using Newtonsoft.Json;
+
+using GazellaMobile.Models;
+using GazellaMobile.Helpers;
+using GazellaMobile.Views;
 
 namespace GazellaMobile
 {
     public partial class App : Application
     {
         #region FIELDS
-        static string BASE_URL = "http://10.0.0.8:60590/api/{0}/{1}";
+        static string BASE_URL = "http://10.0.0.9:50922/api/{0}/{1}";
         static GDSServiceClient _serviceClient = null;
         static User _currentUser = null;
         static bool _isLogin = false;
@@ -65,6 +68,7 @@ namespace GazellaMobile
                     _allowKeepLog = value;
             }
         }
+        #endregion
 
         public static void ToastDialog(string msg, double time = 2000)
         {
@@ -90,14 +94,59 @@ namespace GazellaMobile
             return logResult;
         }
 
+        public static async Task<LoginStatus> isLoginSuccesFulAsync(User user)
+        {
+            var response = await ServiceClient.Post<User>("Login", user);
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var status = JsonConvert.DeserializeObject<LoginStatus>(content);
+                _isLogin = true;
+                _currentUser = user;
+                return status;
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var status = JsonConvert.DeserializeObject<LoginStatus>(content);
+                return status;
+            }
+            else
+            {
+                //WHEN THE SERVER RAISE AN EXCEPTION
+                var content = response.Content.ReadAsStringAsync().Result;
+                dynamic ex = JsonConvert.DeserializeObject(content);
+                return new LoginStatus(false,ex.message);
+            }
+        }
+        public static void PresentMainPage()
+        {
+            if (_isLogin)
+                Current.MainPage = new MainPage();
+        }
+        public static void PresentLoginPage()
+        {
+            if (_allowKeepLog)
+            {
+                _isLogin = true;
+                PresentMainPage();
+                return;
+            }
+
+            Current.MainPage = new LoginPage();
+        }
+
 
         public App()
         {
             InitializeComponent();
 
-            MainPage = new GazellaMobile.MainPage();
+            PresentLoginPage();
+
         }
 
+
+        
         protected override void OnStart()
         {
             // Handle when your app starts
@@ -111,6 +160,7 @@ namespace GazellaMobile
         protected override void OnResume()
         {
             // Handle when your app resumes
+            
         }
     }
 }
