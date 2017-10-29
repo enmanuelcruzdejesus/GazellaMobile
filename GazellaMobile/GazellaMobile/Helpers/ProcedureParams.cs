@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GazellaMobile.Helpers
 {
-    class ProcedureParams
+    public class ProcedureParams
     {
         public string procedureName { get; set; }
         public string paramValues { get; set; }

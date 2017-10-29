@@ -18,23 +18,23 @@ namespace GazellaMobile
     public partial class App : Application
     {
         #region FIELDS
-        static string BASE_URL = "http://10.0.0.9:50922/api/{0}/{1}";
-        static GDSServiceClient _serviceClient = null;
+        static string BASE_URL = "http://10.0.0.8:50931/api/{0}/{1}";   
+        static DataServiceHelper _serviceClient = null;
+        static GDSServiceClient _service = null;
         static User _currentUser = null;
         static bool _isLogin = false;
         static bool _allowKeepLog = false;
         #endregion
 
         #region ATTRIBUTES
-        public static string DbFileName { get { return "GazellaMobile.sqlite"; } }
-       
-        public static GDSServiceClient ServiceClient
+        public static string DbFileName { get { return "GazellaMobile.sqlite"; } }       
+        public static DataServiceHelper ServiceClient
         {
             get
             {
                 if (_serviceClient == null)
                 {
-                    _serviceClient = new GDSServiceClient(BASE_URL);
+                    _serviceClient = new DataServiceHelper(BASE_URL);
                     return _serviceClient;
                 }
                 return _serviceClient;
@@ -93,10 +93,11 @@ namespace GazellaMobile
             var logResult = await UserDialogs.Instance.LoginAsync(logConfig);
             return logResult;
         }
-
         public static async Task<LoginStatus> isLoginSuccesFulAsync(User user)
         {
-            var response = await ServiceClient.Post<User>("Login", user);
+            _service = new GDSServiceClient(BASE_URL);
+            
+            var response = await _service.Post<User>("Login", user);
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
@@ -116,8 +117,10 @@ namespace GazellaMobile
                 //WHEN THE SERVER RAISE AN EXCEPTION
                 var content = response.Content.ReadAsStringAsync().Result;
                 dynamic ex = JsonConvert.DeserializeObject(content);
-                return new LoginStatus(false,ex.message);
+                return new LoginStatus(false, ex.message);
             }
+            
+         
         }
         public static void PresentMainPage()
         {
@@ -139,7 +142,7 @@ namespace GazellaMobile
 
         public App()
         {
-            InitializeComponent();
+            InitializeComponent();            
 
             PresentLoginPage();
 

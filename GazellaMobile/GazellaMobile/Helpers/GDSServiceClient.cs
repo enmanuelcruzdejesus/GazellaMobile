@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace GazellaMobile.Helpers
 {
-    public class GDSServiceClient
+    public class GDSServiceClient : IDisposable
     {
         private HttpClient _client;
         private string Url { get; set; }
@@ -55,7 +55,11 @@ namespace GazellaMobile.Helpers
             return response;
         }
 
-     
+        public void Dispose()
+        {               
+            _client.Dispose();
+            Url = null;
+        }
     }
 }
 

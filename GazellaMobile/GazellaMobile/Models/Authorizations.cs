@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace GazellaMobileApi.Models
+namespace GazellaMobile.Models
 {    
     public class Authorizations
     {

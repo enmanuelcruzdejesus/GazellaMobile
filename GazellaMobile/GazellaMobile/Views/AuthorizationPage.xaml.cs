@@ -13,7 +13,7 @@ namespace GazellaMobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AuthorizationPage : ContentPage
-    {
+    { 
         AuthorizationViewModel vm;
         public AuthorizationPage()
         {

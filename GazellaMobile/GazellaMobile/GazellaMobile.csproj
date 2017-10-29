@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AuthConfirmation.cs" />
+    <Compile Include="Helpers\DataServiceHelper.cs" />
     <Compile Include="Helpers\GDSNetworkConnectivity.cs" />
     <Compile Include="Helpers\GDSServiceClient.cs" />
     <Compile Include="Helpers\LoginStatus.cs" />
