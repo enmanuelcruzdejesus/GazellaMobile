@@ -1,10 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GazellaMobile.Views.AuthorizationDetails">
+             x:Class="GazellaMobile.Views.AuthorizationDetails" Title="Details" 
+             Padding="0,20,0,0">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label Text="AuthorizationId" Style="{StaticResource titleLabelStyle}"/>
+                <Entry x:Name="authIdEntry" Text="{Binding AuthId}" Style="{StaticResource entryStyle}"/>
+                
+                <Label Text="CompanyName" Style="{StaticResource titleLabelStyle}"/>
+                <Entry x:Name="companyNameEntry" Text="{Binding CompanyName}" Style="{StaticResource entryStyle}"/>
+                
+                <Label Text="Description" Style="{StaticResource titleLabelStyle}"/>
+                <Entry x:Name="descriptionEntry" Text="{Binding Description}" Style="{StaticResource entryStyle}"/>
+                
+                <Label Text="RequestDate" Style="{StaticResource titleLabelStyle}" />
+                <Entry x:Name="requestDateEntry" Text="{Binding RequestDate}" Style="{StaticResource entryStyle}"/>
+                
+                <Label Text="RequestBy" Style="{StaticResource titleLabelStyle}" />
+                <Entry x:Name="requestByEntry"  Text="{Binding RequestBy}" Style="{StaticResource entryStyle}"/>
+                
+                <Label Text="Status" Style="{StaticResource titleLabelStyle}" />
+                <Entry x:Name="statusEntry"  Text="{Binding Status}" Style="{StaticResource entryStyle}"/>
+                
+                <Button x:Name="btnAccept" Text="Accept" Style="{StaticResource buttonStyle}"/>
+                <Button x:Name="btnCancel" Text="Cancel" BackgroundColor="Red"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -27,6 +27,13 @@ namespace GazellaMobile.Views
             base.OnAppearing();            
             this.authorizationListView.ItemsSource = await vm.Data;
         }
-        
+
+
+        private async void authorizationListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            dynamic item = (dynamic)e.Item;           
+            
+            await Navigation.PushAsync(new AuthorizationDetails(new AuthorizationDetailsViewModel(item)));
+        }
     }
 }

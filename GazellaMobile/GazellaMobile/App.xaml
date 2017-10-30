@@ -29,7 +29,6 @@
 
             <!--TitleLabel Style-->
             <Style x:Key="titleLabelStyle" TargetType="Label">
-                <!--<Setter Property="TextColor" Value="#9eb4c2"/>-->
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="FontFamily" Value="Droid Sans Mono"/>
@@ -44,7 +43,6 @@
                 <Setter Property="FontSize" Value="Micro"/>
                 <Setter Property="FontFamily" Value="Droid Sans Mono"/>
             </Style>
-
 
             <!--Default EntryStyle-->
             <Style x:Key="entryStyle" TargetType="Entry">
