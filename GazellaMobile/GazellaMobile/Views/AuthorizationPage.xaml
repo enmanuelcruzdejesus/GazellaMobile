@@ -6,10 +6,16 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="authorizationListView">
+            <ListView x:Name="authorizationListView" RowHeight="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Description}" Detail="{Binding RequestBy}"/>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Description}" Style="{StaticResource titleLabelStyle}"/>
+                                <Label Text="{Binding RequestBy}"  Style="{StaticResource detailLabelSytle}"/>
+                                <Label Text="{Binding RequestDate}" Style="{StaticResource moreDetailLabelSytle}"/>
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

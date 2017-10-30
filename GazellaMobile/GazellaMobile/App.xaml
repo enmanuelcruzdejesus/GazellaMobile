@@ -5,34 +5,52 @@
     <Application.Resources>
         <!-- Application resource dictionary -->
         <ResourceDictionary>
-            <Color x:Key="bgColor">
+
+            <!-- TextColor and BackgroundColor-->
+             <Color x:Key="bgColor">
                 #fee57f
             </Color>
             <Color x:Key="textColor">
                 #566f7a
             </Color>
+            
+  
+            <!--Default ButtonStyle-->
             <Style x:Key="buttonStyle" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource bgColor }"/>
-                <Setter Property="TextColor" Value="{StaticResource textColor}"/>
-                <Setter Property="FontSize" Value="Medium"/>
-            </Style>
-            <Style x:Key="labelStyle" TargetType="Label">
-                <!--<Setter Property="BackgroundColor" Value="{StaticResource bgColor }"/>-->
-                <!--<Setter Property="TextColor" Value="{StaticResource textColor}"/>-->
-                <Setter Property="FontSize" Value="Medium"/>
-            </Style>
-            <Style x:Key="titleLabelStyle" TargetType="Label">
-                <!--<Setter Property="BackgroundColor" Value="{StaticResource bgColor }"/>-->
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="TextColor" Value="#9eb4c2"/>
-                <Setter Property="FontSize" Value="Large"/>
-            </Style>
-            <Style x:Key="entryStyle" TargetType="Entry">
-                <!--<Setter Property="BackgroundColor" Value="{StaticResource bgColor }"/>
-                <Setter Property="TextColor" Value="{StaticResource textColor}"/>-->
-                <Setter Property="FontSize" Value="Medium"/>
+              <Setter Property="TextColor" Value="{StaticResource textColor}"/>
+              <Setter Property="FontSize" Value="Medium"/>
+              <Setter Property="BackgroundColor" Value="{StaticResource bgColor }"/>
             </Style>
 
+            <!--Default LabelStyle-->
+            <Style x:Key="labelStyle" TargetType="Label">
+               <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+
+            <!--TitleLabel Style-->
+            <Style x:Key="titleLabelStyle" TargetType="Label">
+                <!--<Setter Property="TextColor" Value="#9eb4c2"/>-->
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="Droid Sans Mono"/>
+            </Style>
+
+            <Style x:Key="detailLabelSytle" TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontFamily" Value="Droid Sans Mono"/>
+            </Style>
+
+            <Style x:Key="moreDetailLabelSytle" TargetType="Label">
+                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontFamily" Value="Droid Sans Mono"/>
+            </Style>
+
+
+            <!--Default EntryStyle-->
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

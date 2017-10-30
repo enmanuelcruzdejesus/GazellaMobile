@@ -15,20 +15,6 @@ namespace GazellaMobile.Views
         public MainPage()
         {
             InitializeComponent();
-            NavigationPage navQueryPage = new NavigationPage( new QueryPage());
-            navQueryPage.Title = "Queries";
-
-            NavigationPage navAuthorizationPage = new NavigationPage(new AuthorizationPage());
-            navAuthorizationPage.Title = "Authorization";
-
-
-            NavigationPage navSettingsPage = new NavigationPage(new SettingsPage());
-            navSettingsPage.Title = "Settings";
-
-            this.Children.Add(navQueryPage);
-            this.Children.Add(navAuthorizationPage);
-            this.Children.Add(navSettingsPage);
-
 
         }
     }
