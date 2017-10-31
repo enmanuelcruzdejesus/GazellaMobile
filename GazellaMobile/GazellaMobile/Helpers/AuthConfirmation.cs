@@ -10,5 +10,12 @@ namespace GazellaMobile.Helpers
         public int AuthId { get; set; }
         public bool Accept { get; set; }
         public string Comments { get; set; }
+        public AuthConfirmation(string userId, int authId, bool accept,string comments)
+        {
+            UserId = userId;
+            AuthId = authId;
+            Accept = accept;
+            Comments = comments;
+        }
     }
 }

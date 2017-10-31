@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using GazellaMobile.Models;
+using System.Diagnostics;
 
 namespace GazellaMobile.Helpers
 {
@@ -40,6 +41,7 @@ namespace GazellaMobile.Helpers
                         CompanyName = data["CompanyName"][i],
                         AuthType = data["AuthType"][i],
                         Description = data["Description"][i],
+                        Comments = data["Comments"][i],
                         RequestDate = data["RequestDate"][i],
                         RequestBy = data["RequestBy"][i],
                         Status = data["Status"][i]
@@ -68,13 +70,38 @@ namespace GazellaMobile.Helpers
                 return data; 
 
             }
-            else
+            else if (response.StatusCode == HttpStatusCode.InternalServerError)
             {
+                // //WHEN THE SERVER RAISE AN EXCEPTION                   
                 return null;
-
             }
 
+            return null;
+
         }    
+        public async Task<string> AuthConfirmationResponse(AuthConfirmation authConfirmation)
+        {
+            var response = await _service.Post<AuthConfirmation>("Authorizations", authConfirmation);
+           
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var data  = JsonConvert.DeserializeObject<Dictionary<string, List<object>>>(content);
+                var message = data["message"][0].ToString();
+                return message;
+                
+            }
+            else if(response.StatusCode == HttpStatusCode.InternalServerError)
+            {
+                // //WHEN THE SERVER RAISE AN EXCEPTION                   
+                var content = response.Content.ReadAsStringAsync().Result;
+                dynamic ex = JsonConvert.DeserializeObject(content);
+                return ex.message;
+            }
+
+            return null;
+           
+        }
         
     }
 }

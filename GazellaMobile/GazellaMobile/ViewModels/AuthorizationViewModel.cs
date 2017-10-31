@@ -15,10 +15,11 @@ namespace GazellaMobile.ViewModels
         {
             get
             {
-                return App.ServiceClient.GetAuthorizations();
+                return App.ServiceClient.GetAuthorizations();                
                
             }
         }
+       
         public AuthorizationViewModel()
         {
           

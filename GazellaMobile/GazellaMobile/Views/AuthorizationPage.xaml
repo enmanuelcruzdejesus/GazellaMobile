@@ -10,9 +10,14 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem x:Name="acceptMenuItem" Text="Accept" CommandParameter="{Binding .}" Clicked="OnAccept"/>
+                                <MenuItem x:Name="cancelMenuItem" Text="Cancel" CommandParameter="{Binding .}" Clicked="OnCancel" IsDestructive="True"/>
+                            </ViewCell.ContextActions>
                             <StackLayout>
                                 <Label Text="{Binding Description}" Style="{StaticResource titleLabelStyle}"/>
-                                <Label Text="{Binding RequestBy}"  Style="{StaticResource detailLabelSytle}"/>
+                                <Label Text="{Binding Comments}"  Style="{StaticResource detailLabelSytle}"/>
+                                <Label Text="{Binding RequestBy}" Style="{StaticResource moreDetailLabelSytle}"/>
                                 <Label Text="{Binding RequestDate}" Style="{StaticResource moreDetailLabelSytle}"/>
                             </StackLayout>
                         </ViewCell>

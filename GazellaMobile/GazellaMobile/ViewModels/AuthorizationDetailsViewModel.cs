@@ -11,16 +11,20 @@ namespace GazellaMobile.ViewModels
     {
 
         dynamic _auth;
+       
         public AuthorizationDetailsViewModel(dynamic authorization)
         {
             _auth = authorization;
         }
+        
+        
 
         public int AuthId
         {
             get
             {
                 return Convert.ToInt32(_auth.AuthId);
+
             }
 
         }
@@ -30,15 +34,16 @@ namespace GazellaMobile.ViewModels
             get
             {
                 return _auth.CompanyName.ToString();
+                
             }
         }
-
 
         public string Description
         {
             get
             {
                 return _auth.Description.ToString();
+                
             }
         }
 
@@ -47,6 +52,7 @@ namespace GazellaMobile.ViewModels
             get
             {
                 return _auth.RequestDate.ToString();
+               
             }
         }
 
@@ -55,6 +61,7 @@ namespace GazellaMobile.ViewModels
             get
             {
                 return _auth.RequestBy.ToString();
+                
             }
         }
 
@@ -63,6 +70,7 @@ namespace GazellaMobile.ViewModels
             get
             {
                 return _auth.Status.ToString();
+               
             }
         }
        
