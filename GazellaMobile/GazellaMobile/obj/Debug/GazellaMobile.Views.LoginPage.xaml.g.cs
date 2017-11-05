@@ -11,8 +11,8 @@
 namespace GazellaMobile.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\ecruz\\Source\\Repos\\GazellaMobile\\GazellaMobile\\GazellaMobile\\Views\\Login" +
-        "Page.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/Gazella" +
+        "Mobile/Views/LoginPage.xaml")]
     public partial class LoginPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

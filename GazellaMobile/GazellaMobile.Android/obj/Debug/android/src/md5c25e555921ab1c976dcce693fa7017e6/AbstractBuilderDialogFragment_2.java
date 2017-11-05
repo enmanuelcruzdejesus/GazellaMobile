@@ -15,7 +15,7 @@ public abstract class AbstractBuilderDialogFragment_2
 	}
 
 
-	public AbstractBuilderDialogFragment_2 () throws java.lang.Throwable
+	public AbstractBuilderDialogFragment_2 ()
 	{
 		super ();
 		if (getClass () == AbstractBuilderDialogFragment_2.class)

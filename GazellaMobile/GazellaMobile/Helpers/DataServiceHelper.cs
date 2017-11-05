@@ -44,7 +44,8 @@ namespace GazellaMobile.Helpers
                         Comments = data["Comments"][i],
                         RequestDate = data["RequestDate"][i],
                         RequestBy = data["RequestBy"][i],
-                        Status = data["Status"][i]
+                        Status = data["Status"][i],
+                        DescripStatus = data["DescripStatus"][i]
                     };
                 }
 

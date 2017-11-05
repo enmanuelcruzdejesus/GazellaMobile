@@ -74,6 +74,15 @@ namespace GazellaMobile.ViewModels
             }
         }
        
+
+        public string DescripStatus
+        {
+            get
+            {
+                return _auth.DescripStatus.ToString();
+
+            }
+        }
         
     }
 }

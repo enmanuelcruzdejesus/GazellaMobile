@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GazellaMobile.App">
@@ -8,10 +8,11 @@
 
             <!-- TextColor and BackgroundColor-->
              <Color x:Key="bgColor">
-                #fee57f
+               #3598db
             </Color>
+            
             <Color x:Key="textColor">
-                #566f7a
+               White
             </Color>
             
   
@@ -34,10 +35,23 @@
                 <Setter Property="FontFamily" Value="Droid Sans Mono"/>
             </Style>
 
+            <Style x:Key="titleLabel2Style" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource bgColor}"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="Droid Sans Mono"/>
+            </Style>
+
+            <Style x:Key="titleLabelNoBoldStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="Droid Sans Mono"/>
+            </Style>
+           
+             
             <Style x:Key="detailLabelSytle" TargetType="Label">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="FontFamily" Value="Droid Sans Mono"/>
             </Style>
+
 
             <Style x:Key="moreDetailLabelSytle" TargetType="Label">
                 <Setter Property="FontSize" Value="Micro"/>

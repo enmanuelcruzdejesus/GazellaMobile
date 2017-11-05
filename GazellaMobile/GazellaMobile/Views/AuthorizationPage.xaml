@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GazellaMobile.Views.AuthorizationPage"
-             Title="Authorization">
+             Title="Autorizaciones">
 
     <ContentPage.Content>
         <StackLayout>
@@ -11,14 +11,14 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.ContextActions>
-                                <MenuItem x:Name="acceptMenuItem" Text="Accept" CommandParameter="{Binding .}" Clicked="OnAccept"/>
-                                <MenuItem x:Name="cancelMenuItem" Text="Cancel" CommandParameter="{Binding .}" Clicked="OnCancel" IsDestructive="True"/>
+                                <MenuItem x:Name="acceptMenuItem" Text="Autorizar" CommandParameter="{Binding .}" Clicked="OnAccept"/>
+                                <MenuItem x:Name="cancelMenuItem" Text="Rechazar" CommandParameter="{Binding .}" Clicked="OnCancel" IsDestructive="True"/>
                             </ViewCell.ContextActions>
                             <StackLayout>
                                 <Label Text="{Binding Description}" Style="{StaticResource titleLabelStyle}"/>
-                                <Label Text="{Binding Comments}"  Style="{StaticResource detailLabelSytle}"/>
-                                <Label Text="{Binding RequestBy}" Style="{StaticResource moreDetailLabelSytle}"/>
-                                <Label Text="{Binding RequestDate}" Style="{StaticResource moreDetailLabelSytle}"/>
+                                <Label Text="{Binding Comments}"  Style="{StaticResource titleLabelNoBoldStyle}"/>
+                                <Label Text="{Binding RequestBy}" Style="{StaticResource titleLabelNoBoldStyle}"/>
+                                <Label Text="{Binding RequestDate}" Style="{StaticResource titleLabelNoBoldStyle}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

@@ -99,6 +99,9 @@
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
     <BundleResource Include="Resources\GazellaMobile.sqlite" />
+    <BundleResource Include="Resources\gazellaicon.png" />
+    <BundleResource Include="Resources\authorizationiconblack.png" />
+    <BundleResource Include="Resources\settingsiconblack.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -186,7 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GazellaMobile\GazellaMobile.csproj">
-      <Project>{8ead17d6-495d-40df-8ed2-28470cd1eca9}</Project>
+      <Project>{442EFD0F-E6F1-417A-9A3B-6EE0740CA5BF}</Project>
       <Name>GazellaMobile</Name>
     </ProjectReference>
   </ItemGroup>

@@ -25,7 +25,6 @@ namespace GazellaMobile.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-            UserDialogs.Init(this);
             return base.FinishedLaunching(app, options);
         }
     }

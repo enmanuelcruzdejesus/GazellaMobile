@@ -1,32 +1,32 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GazellaMobile.Views.AuthorizationDetails" Title="Details" 
+             x:Class="GazellaMobile.Views.AuthorizationDetails" Title="Detalle" 
              Padding="0,20,0,0">
 
     <ContentPage.Content>
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand">
-                <Label Text="AuthorizationId" Style="{StaticResource titleLabelStyle}"/>
+                <Label Text="numero autorizacion" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="authIdEntry" Text="{Binding AuthId}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="CompanyName" Style="{StaticResource titleLabelStyle}"/>
+                <Label Text="compañia" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="companyNameEntry" Text="{Binding CompanyName}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="Description" Style="{StaticResource titleLabelStyle}"/>
+                <Label Text="tipo autorizacion" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="descriptionEntry" Text="{Binding Description}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="RequestDate" Style="{StaticResource titleLabelStyle}" />
+                <Label Text="fecha" Style="{StaticResource titleLabel2Style}" />
                 <Entry x:Name="requestDateEntry" Text="{Binding RequestDate}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="RequestBy" Style="{StaticResource titleLabelStyle}" />
+                <Label Text="solicitada por" Style="{StaticResource titleLabel2Style}" />
                 <Entry x:Name="requestByEntry"  Text="{Binding RequestBy}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="Status" Style="{StaticResource titleLabelStyle}" />
-                <Entry x:Name="statusEntry"  Text="{Binding Status}" Style="{StaticResource entryStyle}"/>
+                <Label Text="estatus" Style="{StaticResource titleLabel2Style}" />
+                <Entry x:Name="statusEntry"  Text="{Binding DescripStatus}" Style="{StaticResource entryStyle}"/>
                 
-                <Button x:Name="btnAccept" Text="Accept" Style="{StaticResource buttonStyle}"/>
-                <Button x:Name="btnCancel" Text="Cancel" BackgroundColor="Red"/>
+                <Button x:Name="btnAccept" Text="Autorizar" Style="{StaticResource buttonStyle}"/>
+                <Button x:Name="btnCancel" Text="Rechazar" TextColor="{StaticResource textColor}" BackgroundColor="Red"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
     <JavaMaximumHeapSize />
@@ -169,7 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GazellaMobile\GazellaMobile.csproj">
-      <Project>{8ead17d6-495d-40df-8ed2-28470cd1eca9}</Project>
+      <Project>{442EFD0F-E6F1-417A-9A3B-6EE0740CA5BF}</Project>
       <Name>GazellaMobile</Name>
     </ProjectReference>
   </ItemGroup>
