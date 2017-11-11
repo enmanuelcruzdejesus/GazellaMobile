@@ -30,6 +30,7 @@ namespace GazellaMobile.Views
         {
             base.OnAppearing();
             this.authorizationListView.ItemsSource = await vm.Data;
+
             
         }
 
@@ -56,6 +57,9 @@ namespace GazellaMobile.Views
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);
+
+            //Updatating 
+            this.authorizationListView.ItemsSource = await vm.Data;
         }
 
         private async void OnCancel(object sender, EventArgs e)
@@ -72,6 +76,9 @@ namespace GazellaMobile.Views
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);
+
+            //Updatating 
+            this.authorizationListView.ItemsSource = await vm.Data;
         }
     }
 }

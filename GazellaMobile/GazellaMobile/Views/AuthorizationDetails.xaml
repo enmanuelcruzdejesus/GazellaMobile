@@ -7,26 +7,26 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand">
-                <Label Text="numero autorizacion" Style="{StaticResource titleLabel2Style}"/>
+                <Label Text="Numero autorizacion" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="authIdEntry" Text="{Binding AuthId}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="compañia" Style="{StaticResource titleLabel2Style}"/>
+                <Label Text="Compañia" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="companyNameEntry" Text="{Binding CompanyName}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="tipo autorizacion" Style="{StaticResource titleLabel2Style}"/>
+                <Label Text="Tipo autorizacion" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="descriptionEntry" Text="{Binding Description}" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Detalle" Style="{StaticResource titleLabel2Style}"/>
+                <Entry x:Name="detailEntry" Text="{Binding AuthDetails}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="fecha" Style="{StaticResource titleLabel2Style}" />
+                <Label Text="Fecha" Style="{StaticResource titleLabel2Style}" />
                 <Entry x:Name="requestDateEntry" Text="{Binding RequestDate}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="solicitada por" Style="{StaticResource titleLabel2Style}" />
+                <Label Text="Solicitada por" Style="{StaticResource titleLabel2Style}" />
                 <Entry x:Name="requestByEntry"  Text="{Binding RequestBy}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="estatus" Style="{StaticResource titleLabel2Style}" />
-                <Entry x:Name="statusEntry"  Text="{Binding DescripStatus}" Style="{StaticResource entryStyle}"/>
-                
-                <Button x:Name="btnAccept" Text="Autorizar" Style="{StaticResource buttonStyle}"/>
-                <Button x:Name="btnCancel" Text="Rechazar" TextColor="{StaticResource textColor}" BackgroundColor="Red"/>
+                <Button x:Name="btnAccept" Text="Autorizar" Style="{StaticResource buttonStyle}" Command="{Binding AcceptCommand}"/>
+                <Button x:Name="btnCancel" Text="Rechazar" TextColor="{StaticResource textColor}" BackgroundColor="Red" Command="{Binding CancelCommand}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

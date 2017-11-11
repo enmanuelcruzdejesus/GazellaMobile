@@ -18,7 +18,7 @@ namespace GazellaMobile
     public partial class App : Application
     {
         #region FIELDS
-        static string BASE_URL = "http://10.0.0.10:50936/api/{0}/{1}";   
+        static string BASE_URL = "http://gazella.ddns.net/gazellamobileapi/api/{0}/{1}";   
         static DataServiceHelper _serviceClient = null;
         static GDSServiceClient _service = null;
         static User _currentUser = null;

@@ -202,7 +202,6 @@ C:/Users/ecruz/Source/Repos/GazellaMobile/GazellaMobile/GazellaMobile.Android/ob
 /Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/bin/Debug/Xamarin.Forms.Xaml.pdb
 /Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/bin/Debug/Xamarin.Forms.Xaml.dll.mdb
 /Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/bin/Debug/Xamarin.Forms.Xaml.xml
-/Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/GazellaMobile.Android.csprojResolveAssemblyReference.cache
 /Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/GazellaMobile.Android.csproj.CoreCompileInputs.cache
 /Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/GazellaMobile.Android.dll
 /Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/GazellaMobile.Android.pdb
@@ -218,3 +217,6 @@ C:/Users/ecruz/Source/Repos/GazellaMobile/GazellaMobile/GazellaMobile.Android/ob
 /Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/res/drawable/settings.png
 /Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/R.cs.flag
 /Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/uploadflags.txt
+/Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/res/drawable/authorizationiconblack.png
+/Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/res/drawable/settingsiconblack.png
+/Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/GazellaMobile.Android/obj/Debug/GazellaMobile.Android.csprojResolveAssemblyReference.cache

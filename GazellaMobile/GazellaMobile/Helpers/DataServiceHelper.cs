@@ -41,6 +41,7 @@ namespace GazellaMobile.Helpers
                         CompanyName = data["CompanyName"][i],
                         AuthType = data["AuthType"][i],
                         Description = data["Description"][i],
+                        AuthDetails = data["AuthDetails"][i],
                         Comments = data["Comments"][i],
                         RequestDate = data["RequestDate"][i],
                         RequestBy = data["RequestBy"][i],

@@ -13,7 +13,7 @@
         </x:Arguments>
     </NavigationPage>
 
-    <NavigationPage Title="Configuraciones" Icon="settingsiconblack.png" Tint="{StaticResource bgColor}">
+    <NavigationPage Title="Configuracion" Icon="settingsiconblack.png" Tint="{StaticResource bgColor}">
         <x:Arguments>
             <local:SettingsPage/>
         </x:Arguments>

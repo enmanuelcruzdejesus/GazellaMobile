@@ -41,11 +41,6 @@
                 <Setter Property="FontFamily" Value="Droid Sans Mono"/>
             </Style>
 
-            <Style x:Key="titleLabelNoBoldStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="Medium"/>
-                <Setter Property="FontFamily" Value="Droid Sans Mono"/>
-            </Style>
-           
              
             <Style x:Key="detailLabelSytle" TargetType="Label">
                 <Setter Property="FontSize" Value="Small"/>

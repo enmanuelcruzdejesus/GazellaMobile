@@ -166,6 +166,8 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\authorizationiconblack.png" />
+    <AndroidResource Include="Resources\drawable\settingsiconblack.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GazellaMobile\GazellaMobile.csproj">

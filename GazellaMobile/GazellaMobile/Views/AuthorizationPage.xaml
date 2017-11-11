@@ -6,7 +6,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="authorizationListView" RowHeight="100" ItemTapped="authorizationListView_ItemTapped">
+            <ListView x:Name="authorizationListView" RowHeight="140" ItemTapped="authorizationListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -16,9 +16,10 @@
                             </ViewCell.ContextActions>
                             <StackLayout>
                                 <Label Text="{Binding Description}" Style="{StaticResource titleLabelStyle}"/>
-                                <Label Text="{Binding Comments}"  Style="{StaticResource titleLabelNoBoldStyle}"/>
-                                <Label Text="{Binding RequestBy}" Style="{StaticResource titleLabelNoBoldStyle}"/>
-                                <Label Text="{Binding RequestDate}" Style="{StaticResource titleLabelNoBoldStyle}"/>
+                                <Label Text="{Binding AuthDetails}" Style="{StaticResource detailLabelSytle}"/>
+                                <Label Text="{Binding Comments}"  Style="{StaticResource moreDetailLabelSytle}"/>
+                                <Label Text="{Binding RequestBy}" Style="{StaticResource moreDetailLabelSytle}"/>
+                                <Label Text="{Binding RequestDate}" Style="{StaticResource moreDetailLabelSytle}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
