@@ -30,7 +30,7 @@
                 <Entry x:Name="requestByEntry"  Text="{Binding RequestBy}" Style="{StaticResource entryStyle}"/>
 
                 <Label Text="Comentarios" Style="{StaticResource titleLabel2Style}"/>
-                <Editor x:Name="commentsEditor"  Text="{Binding Comments}" BackgroundColor="#c6c6c6" HeightRequest="100" />
+                <Editor x:Name="commentsEditor"  Text="{Binding ApprovalComments}" BackgroundColor="#c6c6c6" HeightRequest="100" />
 
 
                 <Button x:Name="btnAccept" Text="Autorizar" Style="{StaticResource buttonStyle}" Command="{Binding AcceptCommand}"/>

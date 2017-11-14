@@ -15,6 +15,7 @@ namespace GazellaMobile.ViewModels
     {
 
         dynamic _auth;
+        string _approvalCommments;
         ICommand _acceptCommand;
         ICommand _cancelCommand;
        
@@ -89,9 +90,7 @@ namespace GazellaMobile.ViewModels
             }
         }
 
-
-   
-
+  
         public string Comments
         {
             get
@@ -100,7 +99,20 @@ namespace GazellaMobile.ViewModels
             }
         }
 
-      
+        public string ApprovalComments
+        {
+            get
+            {
+                return _approvalCommments;
+            }
+            set
+            {
+                _approvalCommments = value;
+            }
+           
+          
+        }
+
 
         public ICommand AcceptCommand 
         {
@@ -125,27 +137,32 @@ namespace GazellaMobile.ViewModels
 
         private async void OnAccept()
         {
-              AuthConfirmation auth = new AuthConfirmation
-                (
-                  App.CurrentUser.UserId,
-                  Convert.ToInt32(AuthId),
-                  true,
-                  Comments
+
+            AuthConfirmation auth = new AuthConfirmation
+              (
+                App.CurrentUser.UserId,
+                AuthId,
+                true,
+                ApprovalComments
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
-            UserDialogs.Instance.ShowSuccess(responseMessage);
-
+            UserDialogs.Instance.ShowSuccess(responseMessage);           
+          
+          
         }
         private async void OnCancel()
-        {       AuthConfirmation auth = new AuthConfirmation
+        {           
+            AuthConfirmation auth = new AuthConfirmation
                 (
                   App.CurrentUser.UserId,
-                  Convert.ToInt32(AuthId),
+                  AuthId,
                   false,
-                 Comments
+                  ApprovalComments
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);
+            
+
         }
 
 

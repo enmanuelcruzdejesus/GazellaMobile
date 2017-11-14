@@ -43,7 +43,7 @@ namespace GazellaMobile.Helpers
                         Description = data["Description"][i],
                         AuthDetail1 = data["AuthDetail1"][i],
                         AuthDetail2 = data["AuthDetail2"][i],
-                        Comments = data["Comments"][i],
+                        Comments = data["Comments"][i],                     
                         RequestDate = data["RequestDate"][i],
                         RequestBy = data["RequestBy"][i],
                         MoreDetail = data["MoreDetail"][i],
