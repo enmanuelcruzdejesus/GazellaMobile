@@ -15,7 +15,7 @@ public class LoginDialogFragment
 	}
 
 
-	public LoginDialogFragment ()
+	public LoginDialogFragment () throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == LoginDialogFragment.class)

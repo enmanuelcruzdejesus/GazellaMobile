@@ -23,7 +23,7 @@ namespace GazellaMobile.Helpers
         public async Task<dynamic[]> GetAuthorizations()
         {
             var response = await _service.GetResponse("Authorizations", App.CurrentUser.UserId);
-            if (response.IsSuccessStatusCode)
+            if (response.StatusCode == HttpStatusCode.OK)
             {
                 var content = await response.Content.ReadAsStringAsync();
                 var data = JsonConvert.DeserializeObject<Dictionary<string, List<object>>>(content);
@@ -41,21 +41,23 @@ namespace GazellaMobile.Helpers
                         CompanyName = data["CompanyName"][i],
                         AuthType = data["AuthType"][i],
                         Description = data["Description"][i],
-                        AuthDetails = data["AuthDetails"][i],
+                        AuthDetail1 = data["AuthDetail1"][i],
+                        AuthDetail2 = data["AuthDetail2"][i],
                         Comments = data["Comments"][i],
                         RequestDate = data["RequestDate"][i],
                         RequestBy = data["RequestBy"][i],
-                        Status = data["Status"][i],
-                        DescripStatus = data["DescripStatus"][i]
+                        MoreDetail = data["MoreDetail"][i],
+                        Status = data["Status"][i]
+                      
                     };
                 }
 
                 return dynamicData;
             }
-            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            else if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
             {
-                return null;
-            }
+                return new dynamic[] { };
+            }            
             else
             {
                 //WHEN THE SERVER RAISE AN EXCEPTION     

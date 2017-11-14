@@ -16,7 +16,7 @@ public class ActionSheetAppCompatDialogFragment
 	}
 
 
-	public ActionSheetAppCompatDialogFragment ()
+	public ActionSheetAppCompatDialogFragment () throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == ActionSheetAppCompatDialogFragment.class)

@@ -15,7 +15,7 @@ public class DateDialogFragment
 	}
 
 
-	public DateDialogFragment ()
+	public DateDialogFragment () throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == DateDialogFragment.class)

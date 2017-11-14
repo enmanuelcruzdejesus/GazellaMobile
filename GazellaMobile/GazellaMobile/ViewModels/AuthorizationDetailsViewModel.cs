@@ -53,6 +53,24 @@ namespace GazellaMobile.ViewModels
             }
         }
 
+        public string AuthDetail1
+        {
+            get
+            {
+                return _auth.AuthDetail1.ToString();
+
+            }
+        }
+
+        public string AuthDetail2
+        {
+            get
+            {
+                return _auth.AuthDetail2.ToString();
+
+            }
+        }
+
         public string RequestDate
         {
             get
@@ -72,23 +90,17 @@ namespace GazellaMobile.ViewModels
         }
 
 
-        public string DescripStatus
+   
+
+        public string Comments
         {
             get
             {
-                return _auth.DescripStatus.ToString();
-
+                return _auth.Comments.ToString();   
             }
         }
 
-        public string Detalle
-        {
-            get
-            {
-                return _auth.AuthDetails.ToString();
-
-            }
-        }
+      
 
         public ICommand AcceptCommand 
         {
@@ -118,7 +130,7 @@ namespace GazellaMobile.ViewModels
                   App.CurrentUser.UserId,
                   Convert.ToInt32(AuthId),
                   true,
-                  ""
+                  Comments
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);
@@ -130,7 +142,7 @@ namespace GazellaMobile.ViewModels
                   App.CurrentUser.UserId,
                   Convert.ToInt32(AuthId),
                   false,
-                  ""
+                 Comments
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);

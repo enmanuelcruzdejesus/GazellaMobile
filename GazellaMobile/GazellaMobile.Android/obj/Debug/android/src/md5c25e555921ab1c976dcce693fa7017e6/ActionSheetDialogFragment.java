@@ -16,7 +16,7 @@ public class ActionSheetDialogFragment
 	}
 
 
-	public ActionSheetDialogFragment ()
+	public ActionSheetDialogFragment () throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == ActionSheetDialogFragment.class)

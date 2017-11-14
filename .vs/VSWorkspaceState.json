@@ -1,13 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\packages",
-    "\\packages\\System.Net.Http.4.3.0\\lib",
-    "\\packages\\System.Net.Http.4.3.0\\lib\\monoandroid10",
-    "\\packages\\System.Net.Http.4.3.0\\lib\\monotouch10",
-    "\\packages\\System.Net.Http.4.3.0\\lib\\net45",
-    "\\packages\\System.Runtime.InteropServices.RuntimeInformation.4.3.0\\lib"
+    "\\packages"
   ],
-  "SelectedNode": "\\packages",
+  "SelectedNode": "\\packages\\Acr.UserDialogs.6.2.4",
   "PreviewInSolutionExplorer": false
 }

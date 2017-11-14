@@ -1,17 +1,10 @@
-﻿using System;
+﻿using Acr.UserDialogs;
+using GazellaMobile.Helpers;
+using GazellaMobile.ViewModels;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Diagnostics;
-using Acr.UserDialogs;
-
-
-using GazellaMobile.ViewModels;
-using GazellaMobile.Helpers;
 
 namespace GazellaMobile.Views
 {
@@ -29,7 +22,8 @@ namespace GazellaMobile.Views
         protected async  override void OnAppearing()
         {
             base.OnAppearing();
-            this.authorizationListView.ItemsSource = await vm.Data;
+           
+            this.authorizationListView.ItemsSource = await  vm.Data;
 
             
         }

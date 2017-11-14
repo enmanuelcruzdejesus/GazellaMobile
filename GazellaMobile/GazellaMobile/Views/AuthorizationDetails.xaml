@@ -15,16 +15,24 @@
                 
                 <Label Text="Tipo autorizacion" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="descriptionEntry" Text="{Binding Description}" Style="{StaticResource entryStyle}"/>
-
+             
                 <Label Text="Detalle" Style="{StaticResource titleLabel2Style}"/>
-                <Entry x:Name="detailEntry" Text="{Binding AuthDetails}" Style="{StaticResource entryStyle}"/>
-                
+                <Editor x:Name="detailsEditor" IsEnabled="False" Text="{Binding AuthDetail1}" BackgroundColor="#c6c6c6" HeightRequest="100" />
+
+                <Label Text="Monto" Style="{StaticResource titleLabel2Style}"/>
+                <Entry x:Name="authdetail2Entry" Text="{Binding AuthDetail2}" Style="{StaticResource entryStyle}"/>
+
+
                 <Label Text="Fecha" Style="{StaticResource titleLabel2Style}" />
                 <Entry x:Name="requestDateEntry" Text="{Binding RequestDate}" Style="{StaticResource entryStyle}"/>
                 
                 <Label Text="Solicitada por" Style="{StaticResource titleLabel2Style}" />
                 <Entry x:Name="requestByEntry"  Text="{Binding RequestBy}" Style="{StaticResource entryStyle}"/>
-                
+
+                <Label Text="Comentarios" Style="{StaticResource titleLabel2Style}"/>
+                <Editor x:Name="commentsEditor"  Text="{Binding Comments}" BackgroundColor="#c6c6c6" HeightRequest="100" />
+
+
                 <Button x:Name="btnAccept" Text="Autorizar" Style="{StaticResource buttonStyle}" Command="{Binding AcceptCommand}"/>
                 <Button x:Name="btnCancel" Text="Rechazar" TextColor="{StaticResource textColor}" BackgroundColor="Red" Command="{Binding CancelCommand}"/>
             </StackLayout>

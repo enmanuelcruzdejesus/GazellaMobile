@@ -15,7 +15,7 @@ public class BottomSheetDialogFragment
 	}
 
 
-	public BottomSheetDialogFragment ()
+	public BottomSheetDialogFragment () throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == BottomSheetDialogFragment.class)

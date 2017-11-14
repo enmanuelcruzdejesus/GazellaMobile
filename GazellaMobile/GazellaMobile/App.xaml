@@ -31,7 +31,7 @@
             <!--TitleLabel Style-->
             <Style x:Key="titleLabelStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="FontFamily" Value="Droid Sans Mono"/>
             </Style>
 

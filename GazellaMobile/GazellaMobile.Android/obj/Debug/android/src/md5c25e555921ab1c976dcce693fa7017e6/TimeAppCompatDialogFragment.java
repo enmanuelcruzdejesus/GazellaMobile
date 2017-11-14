@@ -15,7 +15,7 @@ public class TimeAppCompatDialogFragment
 	}
 
 
-	public TimeAppCompatDialogFragment ()
+	public TimeAppCompatDialogFragment () throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == TimeAppCompatDialogFragment.class)

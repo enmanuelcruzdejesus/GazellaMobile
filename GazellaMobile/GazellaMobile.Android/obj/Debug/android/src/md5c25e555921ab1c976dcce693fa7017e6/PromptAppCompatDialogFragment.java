@@ -15,7 +15,7 @@ public class PromptAppCompatDialogFragment
 	}
 
 
-	public PromptAppCompatDialogFragment ()
+	public PromptAppCompatDialogFragment () throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == PromptAppCompatDialogFragment.class)
