@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using GazellaMobile.ViewModels;
 
 namespace GazellaMobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
+        SettingsPageViewModel vm = new SettingsPageViewModel();
         public SettingsPage()
         {
             InitializeComponent();
+            this.BindingContext = vm;
+            
         }
     }
 }

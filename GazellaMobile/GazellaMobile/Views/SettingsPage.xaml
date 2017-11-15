@@ -3,8 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GazellaMobile.Views.SettingsPage" Title="Configuracion">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Settings Page!" />
+        <StackLayout Padding="0,20,0,0">
+            <TableView Intent="Settings">
+                <TableRoot >
+                    <TableSection Title ="Configuracion Servidor">
+                        <EntryCell x:Name="userName" Label="Usuario" />
+                        <EntryCell x:Name="passWord" Label="Contraseña"  />
+                    </TableSection>
+                    <TableSection Title="Cuenta">
+                        <SwitchCell x:Name="keepLogInSwitch" Text="Mantenerme Logiado" />
+                        <EntryCell x:Name="emailEntryCell" Label="Correo Electronico"/>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Cerrar Sesion" TextColor="Red" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding LogOutCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

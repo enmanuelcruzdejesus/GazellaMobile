@@ -8,29 +8,32 @@
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand">
                 <Label Text="Numero autorizacion" Style="{StaticResource titleLabel2Style}"/>
-                <Entry x:Name="authIdEntry" Text="{Binding AuthId}" Style="{StaticResource entryStyle}"/>
+                <Entry x:Name="authIdEntry" IsEnabled="False" Text="{Binding AuthId}" Style="{StaticResource entryStyle}"/>
                 
                 <Label Text="Compañia" Style="{StaticResource titleLabel2Style}"/>
-                <Entry x:Name="companyNameEntry" Text="{Binding CompanyName}" Style="{StaticResource entryStyle}"/>
+                <Entry x:Name="companyNameEntry" IsEnabled="False"  Text="{Binding CompanyName}" Style="{StaticResource entryStyle}"/>
                 
                 <Label Text="Tipo autorizacion" Style="{StaticResource titleLabel2Style}"/>
-                <Entry x:Name="descriptionEntry" Text="{Binding Description}" Style="{StaticResource entryStyle}"/>
+                <Entry x:Name="descriptionEntry" IsEnabled="False" Text="{Binding Description}" Style="{StaticResource entryStyle}"/>
              
                 <Label Text="Detalle" Style="{StaticResource titleLabel2Style}"/>
-                <Editor x:Name="detailsEditor" IsEnabled="False" Text="{Binding AuthDetail1}" BackgroundColor="#c6c6c6" HeightRequest="100" />
+                <Editor x:Name="detailsEditor" IsEnabled="False" Text="{Binding AuthDetail1}" BackgroundColor="WhiteSmoke" HeightRequest="100" />
 
                 <Label Text="Monto" Style="{StaticResource titleLabel2Style}"/>
-                <Entry x:Name="authdetail2Entry" Text="{Binding AuthDetail2}" Style="{StaticResource entryStyle}"/>
+                <Entry x:Name="authdetail2Entry" IsEnabled="False" Text="{Binding AuthDetail2 , StringFormat='${0}'}"  Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Comentarios de usuario:" Style="{StaticResource titleLabel2Style}"/>
+                <Editor x:Name="usercommentsEditor" IsEnabled="False" Text="{Binding Comments}" BackgroundColor="WhiteSmoke" HeightRequest="100" />
 
 
                 <Label Text="Fecha" Style="{StaticResource titleLabel2Style}" />
-                <Entry x:Name="requestDateEntry" Text="{Binding RequestDate}" Style="{StaticResource entryStyle}"/>
+                <Entry x:Name="requestDateEntry" IsEnabled="False" Text="{Binding RequestDate}" Style="{StaticResource entryStyle}"/>
                 
                 <Label Text="Solicitada por" Style="{StaticResource titleLabel2Style}" />
-                <Entry x:Name="requestByEntry"  Text="{Binding RequestBy}" Style="{StaticResource entryStyle}"/>
+                <Entry x:Name="requestByEntry" IsEnabled="False"  Text="{Binding RequestBy}" Style="{StaticResource entryStyle}"/>
 
                 <Label Text="Comentarios" Style="{StaticResource titleLabel2Style}"/>
-                <Editor x:Name="commentsEditor"  Text="{Binding ApprovalComments}" BackgroundColor="#c6c6c6" HeightRequest="100" />
+                <Editor x:Name="commentsEditor"  Text="{Binding ApprovalComments}" BackgroundColor="WhiteSmoke" HeightRequest="100" />
 
 
                 <Button x:Name="btnAccept" Text="Autorizar" Style="{StaticResource buttonStyle}" Command="{Binding AcceptCommand}"/>

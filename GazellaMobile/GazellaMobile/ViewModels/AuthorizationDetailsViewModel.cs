@@ -15,7 +15,7 @@ namespace GazellaMobile.ViewModels
     {
 
         dynamic _auth;
-        string _approvalCommments;
+        string _approvalCommments = "";
         ICommand _acceptCommand;
         ICommand _cancelCommand;
        

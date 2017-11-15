@@ -138,7 +138,27 @@ namespace GazellaMobile
 
             Current.MainPage = new LoginPage();
         }
+        public async static void LogOut()
+        {
+            UserDialogs.Instance.ShowLoading("Cerrando Sesión", MaskType.Black);
+            _service = null;
+            _serviceClient = null;
+            _currentUser = null;
+            _isLogin = false;
+            _allowKeepLog = false;
+            // Saving some data
+            await Task.Delay(2000);
+            UserDialogs.Instance.HideLoading();
+            PresentLoginPage();  
+          
 
+            
+        }
+
+        private void InitializeApp()
+        {
+               
+        }
 
         public App()
         {

@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace GazellaMobile.Helpers
 {
-    public class DataServiceHelper
+    public class DataServiceHelper : IDisposable
     {
         GDSServiceClient _service = null;
         public string Uri { get; }       
@@ -106,6 +106,11 @@ namespace GazellaMobile.Helpers
             return null;
            
         }
-        
+
+        public void Dispose()
+        {
+            _service.Dispose();
+           
+        }
     }
 }

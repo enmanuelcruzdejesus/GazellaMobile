@@ -12,7 +12,7 @@
                     <Entry x:Name="userNameEntry" Placeholder="Usuario" Text="{Binding UserId}" Style="{StaticResource entryStyle}"/>
                     <Entry x:Name="passwordEntry" Placeholder="Contraseña" Text="{Binding Password}" IsPassword="True" Style="{StaticResource entryStyle}"/>
                     <Button x:Name="btnSignIn" Text="Iniciar Sesion" Command="{Binding SignInCommand}" Style="{StaticResource buttonStyle}"/>
-                    <Label x:Name="lblFortPasword" Text="Olvidaste la contraseña?" XAlign="Center" Style="{StaticResource labelStyle}"/>
+                    <Label  x:Name="lblFortPasword" Text="Olvidaste la contraseña?" XAlign="Center" TextColor="Blue" Style="{StaticResource labelStyle} "/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

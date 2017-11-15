@@ -51,6 +51,7 @@
     <Compile Include="ViewModels\AuthorizationDetailsViewModel.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\SettingsPageViewModel.cs" />
     <Compile Include="Views\AuthorizationDetails.xaml.cs">
       <DependentUpon>AuthorizationDetails.xaml</DependentUpon>
     </Compile>

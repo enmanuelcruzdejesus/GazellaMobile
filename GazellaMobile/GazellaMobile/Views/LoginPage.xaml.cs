@@ -19,6 +19,13 @@ namespace GazellaMobile.Views
             InitializeComponent();
             vm = new LoginPageViewModel();
             this.BindingContext = vm;
+            userNameEntry.Focus();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            this.userNameEntry.Focus();
+        }
+
     }
 }
