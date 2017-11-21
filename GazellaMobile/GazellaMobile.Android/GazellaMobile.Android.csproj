@@ -154,7 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <AndroidAsset Include="Assets\GazellaMobile.sqlite" />
+    <AndroidAsset Include="Assets\GazellaMobile.db3" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />

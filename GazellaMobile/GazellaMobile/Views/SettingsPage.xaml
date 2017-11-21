@@ -2,17 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GazellaMobile.Views.SettingsPage" Title="Configuracion">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="saveToolBarItem" Text="Guardar" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
-            <TableView Intent="Settings">
+            <TableView Intent="Settings" x:Name="settingsTableView">
                 <TableRoot >
                     <TableSection Title ="Configuracion Servidor">
-                        <EntryCell x:Name="userName" Label="Usuario" />
-                        <EntryCell x:Name="passWord" Label="Contraseña"  />
+                        <EntryCell Label="Servidor" Text="{Binding Settings.Server}" />
+                        <EntryCell Label="Usuario" Text="{Binding Settings.UserId}" />
+                        <EntryCell Label="Password" Text="{Binding Settings.Password}" />
                     </TableSection>
                     <TableSection Title="Cuenta">
-                        <SwitchCell x:Name="keepLogInSwitch" Text="Mantenerme Logiado" />
-                        <EntryCell x:Name="emailEntryCell" Label="Correo Electronico"/>
+                        <SwitchCell x:Name="keepLogInSwitch" Text="Guardar Contraseña" On="{Binding Settings.AllowKeepLog}" />
+                        <EntryCell x:Name="emailEntryCell" Label="Correo Electronico" Text="{Binding Settings.Email}"/>
                         <ViewCell>
                             <ViewCell.View>
                                 <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Cerrar Sesion" TextColor="Red" >
@@ -28,3 +35,4 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+    

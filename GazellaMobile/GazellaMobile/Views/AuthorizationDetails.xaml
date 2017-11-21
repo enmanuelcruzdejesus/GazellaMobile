@@ -7,13 +7,13 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand">
-                <Label Text="Numero autorizacion" Style="{StaticResource titleLabel2Style}"/>
+                <Label Text="Número autorización" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="authIdEntry" IsEnabled="False" Text="{Binding AuthId}" Style="{StaticResource entryStyle}"/>
                 
                 <Label Text="Compañia" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="companyNameEntry" IsEnabled="False"  Text="{Binding CompanyName}" Style="{StaticResource entryStyle}"/>
                 
-                <Label Text="Tipo autorizacion" Style="{StaticResource titleLabel2Style}"/>
+                <Label Text="Tipo autorización" Style="{StaticResource titleLabel2Style}"/>
                 <Entry x:Name="descriptionEntry" IsEnabled="False" Text="{Binding Description}" Style="{StaticResource entryStyle}"/>
              
                 <Label Text="Detalle" Style="{StaticResource titleLabel2Style}"/>
@@ -26,7 +26,7 @@
                 <Editor x:Name="usercommentsEditor" IsEnabled="False" Text="{Binding Comments}" BackgroundColor="WhiteSmoke" HeightRequest="100" />
 
 
-                <Label Text="Fecha" Style="{StaticResource titleLabel2Style}" />
+                <Label Text="Fecha solicitud" Style="{StaticResource titleLabel2Style}" />
                 <Entry x:Name="requestDateEntry" IsEnabled="False" Text="{Binding RequestDate}" Style="{StaticResource entryStyle}"/>
                 
                 <Label Text="Solicitada por" Style="{StaticResource titleLabel2Style}" />

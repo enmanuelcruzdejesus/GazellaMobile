@@ -45,6 +45,7 @@
     <Compile Include="Helpers\LoginStatus.cs" />
     <Compile Include="Helpers\ProcedureParams.cs" />
     <Compile Include="Interfaces\ISQLConnection.cs" />
+    <Compile Include="Models\AppSettings.cs" />
     <Compile Include="Models\Authorizations.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

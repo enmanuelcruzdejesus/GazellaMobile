@@ -9,11 +9,12 @@ using SQLite;
 using System.IO;
 using Xamarin.Forms;
 using GazellaMobile.iOS;
+using GazellaMobile.Interfaces;
 
 [assembly:Dependency(typeof(SQLConnection_iOS))]
 namespace GazellaMobile.iOS
 {
-    public class SQLConnection_iOS
+    public class SQLConnection_iOS : ISQLConnection
     {
         public SQLiteConnection GetConnection()
         {
@@ -30,7 +31,7 @@ namespace GazellaMobile.iOS
         {
             if (!File.Exists(dbPath))
             {
-                var sourcePath = NSBundle.MainBundle.PathForResource("GazellaMobile", ".sqlite");
+                var sourcePath = NSBundle.MainBundle.PathForResource(App.DbName, ".db3");
                 File.Copy(sourcePath, dbPath);
             }
         }

@@ -12,11 +12,12 @@ using SQLite;
 using System.IO;
 using Xamarin.Forms;
 using GazellaMobile.Droid;
+using GazellaMobile.Interfaces;
 
 [assembly:Dependency(typeof(SQLConnection_Android))]
 namespace GazellaMobile.Droid
 {
-     public class SQLConnection_Android
+     public class SQLConnection_Android : ISQLConnection
     {
         public SQLiteConnection GetConnection()
         {
