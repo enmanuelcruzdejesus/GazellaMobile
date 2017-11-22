@@ -9,6 +9,7 @@ using GazellaMobile.Helpers;
 using GazellaMobile.Models;
 using Xamarin.Forms;
 
+
 namespace GazellaMobile.ViewModels
 {
     public class AuthorizationDetailsViewModel
@@ -145,10 +146,15 @@ namespace GazellaMobile.ViewModels
                 true,
                 ApprovalComments
                 );
+
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
-            UserDialogs.Instance.ShowSuccess(responseMessage);           
-          
-          
+            UserDialogs.Instance.ShowSuccess(responseMessage);
+            await Task.Delay(2000);
+            TabbedPage page = (TabbedPage)App.Current.MainPage;
+            await page.Children[0].Navigation.PopAsync();
+
+
+
         }
         private async void OnCancel()
         {           
@@ -161,7 +167,10 @@ namespace GazellaMobile.ViewModels
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);
-            
+            await Task.Delay(2000);
+            TabbedPage page = (TabbedPage)App.Current.MainPage;
+            await page.Children[0].Navigation.PopAsync();
+
 
         }
 

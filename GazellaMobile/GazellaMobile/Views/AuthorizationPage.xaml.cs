@@ -34,6 +34,8 @@ namespace GazellaMobile.Views
             dynamic item = (dynamic)e.Item;
 
             await Navigation.PushAsync(new AuthorizationDetails(new AuthorizationDetailsViewModel(item)));
+            
+            
         }
 
       
@@ -52,7 +54,7 @@ namespace GazellaMobile.Views
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);
 
-            //Updatating 
+            //Updating 
             this.authorizationListView.ItemsSource = await vm.Data;
         }
 
@@ -71,7 +73,7 @@ namespace GazellaMobile.Views
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);
 
-            //Updatating 
+            //Updating 
             this.authorizationListView.ItemsSource = await vm.Data;
         }
     }
