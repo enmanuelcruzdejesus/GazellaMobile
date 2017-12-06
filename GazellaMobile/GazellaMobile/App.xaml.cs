@@ -23,11 +23,11 @@ namespace GazellaMobile
         static string SERVER_NAME = "http://{0}/";
         static string BASE_URL = "gazellamobileapi/api/{0}/{1}";
         static string _uri;
-        static DataServiceHelper _serviceClient = null;
-        static GDSServiceClient _serviceClient2 = null;
-        static User _currentUser = null;
         static bool _isLogin = false;
         static bool _allowKeepLog = false;
+        static DataServiceHelper _serviceClient = null;
+        static GDSServiceClient _serviceClient2 = null;
+        static User _currentUser = null;     
         static SQLiteConnection _dbConnection = null;
         static AppSettings _settings = null;
     
@@ -47,7 +47,23 @@ namespace GazellaMobile
             }
         }
         public static string DbName { get { return "GazellaMobile"; } }
-        public static string DbFileName { get { return "GazellaMobile.db3"; } }       
+        public static string DbFileName { get { return "GazellaMobile.db3"; } }
+        public static bool isLogin
+        {
+            get
+            {
+                return _isLogin;
+            }
+        }
+        public static bool AllowKeepLog
+        {
+            get { return _allowKeepLog; }
+            set
+            {
+                if (value != _allowKeepLog)
+                    _allowKeepLog = value;
+            }
+        }
         public static DataServiceHelper ServiceClient
         {
             get
@@ -93,22 +109,7 @@ namespace GazellaMobile
             }
 
         }
-        public static bool isLogin
-        {
-            get
-            {
-                return _isLogin;
-            }
-        }
-        public static bool AllowKeepLog
-        {
-            get { return _allowKeepLog; }
-            set
-            {
-                if (value != _allowKeepLog)
-                    _allowKeepLog = value;
-            }
-        }
+  
         #endregion
 
         #region Static Methods
@@ -157,7 +158,7 @@ namespace GazellaMobile
             else
             {
                 //WHEN THE SERVER RAISE AN EXCEPTION
-                var content = response.Content.ReadAsStringAsync().Result;
+                var content = await response.Content.ReadAsStringAsync();
                 dynamic ex = JsonConvert.DeserializeObject(content);
                 return new LoginStatus(false, ex.message);
             }

@@ -18,8 +18,7 @@ namespace GazellaMobile.Helpers
         public DataServiceHelper(string uri)
         {
             _service = new GDSServiceClient(uri);
-        }
-
+        }        
         public async Task<dynamic[]> GetAuthorizations()
         {
             var response = await _service.GetResponse("Authorizations", App.CurrentUser.UserId);
@@ -64,6 +63,78 @@ namespace GazellaMobile.Helpers
                 return null;
             }
         }
+        public async Task<dynamic[]> GetReportModules()
+        {
+            var data = await ExecProcedureData(new ProcedureParams() { procedureName = "gm_get_ReportModules", paramValues = App.CurrentUser.UserId });
+
+            if (data == null)
+                return new dynamic[] { };
+
+            var records = data["ModuleId"].Count;
+            dynamic[] dinamycArray = new dynamic[records];
+            for (int i = 0; i < records; i++)
+            {
+                dinamycArray[i] = new
+                {
+                 
+                    ModuleId = data["ModuleId"][i],
+                    ModuleDescrip = data["ModuleDescrip"][i],
+                   
+
+                };
+            }
+
+            return dinamycArray;
+        }
+        public async Task<dynamic[]> GetReports(int ModuleId)
+        {
+            var data = await ExecProcedureData(new ProcedureParams() { procedureName = "gm_get_reports",paramValues=ModuleId.ToString()});
+            var records = data["ProgramId"].Count;
+            dynamic[] dinamycArray = new dynamic[records];
+            for (int i = 0; i < records; i++)
+            {
+                dinamycArray[i] = new
+                {
+                    ProgramId = data["ProgramId"][i],
+                    ProgramDescrip = data["ProgramDescrip"][i],
+                    ModuleId = data["ModuleId"][i],
+                    ModuleDescrip = data["ModuleDescrip"][i],
+                    Sequence = data["Sequence"][i],
+                    ReportId = data["ReportId"][i],
+                    ProcedureName = data["ProcedureName"][i]
+
+                };
+            }
+
+            return dinamycArray;
+          
+        }
+        public async Task<dynamic[]> GetReportParams(int ReportId)
+        {
+            if (ReportId <= 0)
+                return null;
+
+            var data = await ExecProcedureData(new ProcedureParams() { procedureName = "gm_get_DynamicProcedureParams", paramValues = ReportId.ToString() });
+            var records = data["ReportId"].Count;
+            dynamic[] dinamycArray = new dynamic[records];
+            for (int i = 0; i < records; i++)
+            {
+                dinamycArray[i] = new
+                {
+                    ReportId = data["ReportId"][i],
+                    ParameterName = data["ParameterName"][i],
+                    Caption = data["Caption"][i],
+                    DataType = data["DataType"][i],
+                    ObjectType = data["ObjectType"][i],
+                    Sequence = data["Sequence"][i],
+                    ReadOnly = data["ReadOnly"][i],
+
+                };
+            }
+
+            return dinamycArray;
+            
+        }
         public async Task<Dictionary<string, List<object>>> ExecProcedureData(ProcedureParams p)
         {
             var response = await _service.Post<ProcedureParams>("GDSApi", p);
@@ -73,6 +144,10 @@ namespace GazellaMobile.Helpers
                 var data = JsonConvert.DeserializeObject<Dictionary<string, List<object>>>(content);
                 return data; 
 
+            }
+            else if (response.StatusCode == HttpStatusCode.NoContent)
+            {
+                return null;
             }
             else if (response.StatusCode == HttpStatusCode.InternalServerError)
             {
@@ -106,7 +181,6 @@ namespace GazellaMobile.Helpers
             return null;
            
         }
-
         public void Dispose()
         {
             _service.Dispose();

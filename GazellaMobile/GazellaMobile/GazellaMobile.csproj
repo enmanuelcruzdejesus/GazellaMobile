@@ -42,6 +42,7 @@
     <Compile Include="Helpers\DataServiceHelper.cs" />
     <Compile Include="Helpers\GDSNetworkConnectivity.cs" />
     <Compile Include="Helpers\GDSServiceClient.cs" />
+    <Compile Include="Helpers\Grouping.cs" />
     <Compile Include="Helpers\LoginStatus.cs" />
     <Compile Include="Helpers\ProcedureParams.cs" />
     <Compile Include="Interfaces\ISQLConnection.cs" />
@@ -52,6 +53,9 @@
     <Compile Include="ViewModels\AuthorizationDetailsViewModel.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\ReportDetailsViewModel.cs" />
+    <Compile Include="ViewModels\ReportParamViewModel.cs" />
+    <Compile Include="ViewModels\ReportsPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
     <Compile Include="Views\AuthorizationDetails.xaml.cs">
       <DependentUpon>AuthorizationDetails.xaml</DependentUpon>
@@ -67,6 +71,13 @@
     </Compile>
     <Compile Include="Views\QueryPage.xaml.cs">
       <DependentUpon>QueryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportDetailsPage.xaml.cs">
+      <DependentUpon>ReportDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportParamPage.cs" />
+    <Compile Include="Views\ReportsPage.xaml.cs">
+      <DependentUpon>ReportsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -166,6 +177,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\AuthorizationDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ReportsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ReportDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
