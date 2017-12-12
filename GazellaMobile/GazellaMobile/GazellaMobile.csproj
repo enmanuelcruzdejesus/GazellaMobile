@@ -40,6 +40,7 @@
     </Compile>
     <Compile Include="Helpers\AuthConfirmation.cs" />
     <Compile Include="Helpers\DataServiceHelper.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
     <Compile Include="Helpers\GDSNetworkConnectivity.cs" />
     <Compile Include="Helpers\GDSServiceClient.cs" />
     <Compile Include="Helpers\GDSViewHelper.cs" />
@@ -47,9 +48,9 @@
     <Compile Include="Helpers\LoginStatus.cs" />
     <Compile Include="Helpers\ProcedureParams.cs" />
     <Compile Include="Interfaces\ISQLConnection.cs" />
-    <Compile Include="Models\AppSettings.cs" />
-    <Compile Include="Models\Authorizations.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="ViewModels\Models\AppSettings.cs" />
+    <Compile Include="ViewModels\Models\Authorizations.cs" />
+    <Compile Include="ViewModels\Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AuthorizationDetailsViewModel.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />

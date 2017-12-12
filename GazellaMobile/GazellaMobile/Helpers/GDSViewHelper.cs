@@ -16,7 +16,8 @@ namespace GazellaMobile.Helpers
                 if(sender.DataType == "N")
                 {
                     control = new Entry()
-                    {
+                    {                      
+                        Text = sender.DefaultValue.ToString(),
                         Keyboard = Keyboard.Numeric,
                         Style = (Style)App.Current.Resources["entryStyle"]
                     };
@@ -25,20 +26,41 @@ namespace GazellaMobile.Helpers
                 {
                     control = new Entry() 
                     {
+                        Text = sender.DefaultValue.ToString(),
                         Style = (Style)App.Current.Resources["entryStyle"]
                     };
                 }
           }
           else if(sender.ObjectType == "DateBox")
           {
-                control = new DatePicker()
+                if(sender.ObjectValue == "BEGINDATE")
                 {
-                    Date = DateTime.Now,
-                    Format = "D"
-                };
+                    control = new DatePicker()
+                    {
+                        Date = DateTime.Now.FirstDayOfMonth(),
+                        Format = "D"
+                    };
+                    
+                }else if(sender.ObjectValue == "ENDDATE")
+                {
+                    control = new DatePicker()
+                    {
+                        Date = DateTime.Now.LastDayOfMonth(),
+                        Format = "D"
+                    };
+                }
+                else
+                {
+                    control = new DatePicker()
+                    {
+                        Date = DateTime.Now,
+                        Format = "D"
+                    };
+                }
 
-          }else if(sender.ObjectType == "CheckBox")
-          {
+            }
+            else if(sender.ObjectType == "CheckBox")
+            {
                 bool isChecked = sender.ObjectValue == "S";
                 control = new Switch()
                 {
@@ -46,7 +68,7 @@ namespace GazellaMobile.Helpers
                    IsToggled = isChecked
                    
                 };
-          }
+            }
           else
           {
                 var comboValues = sender.ObjectValue.ToString().Split(',');
