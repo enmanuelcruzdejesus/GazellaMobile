@@ -126,6 +126,8 @@ namespace GazellaMobile.Helpers
                     Caption = data["Caption"][i],
                     DataType = data["DataType"][i],
                     ObjectType = data["ObjectType"][i],
+                    ObjectValue  = data["ObjectValue"][i],
+                    DefaultValue = data["DefaultValue"][i],
                     Sequence = data["Sequence"][i],
                     ReadOnly = data["ReadOnly"][i],
 

@@ -42,6 +42,7 @@
     <Compile Include="Helpers\DataServiceHelper.cs" />
     <Compile Include="Helpers\GDSNetworkConnectivity.cs" />
     <Compile Include="Helpers\GDSServiceClient.cs" />
+    <Compile Include="Helpers\GDSViewHelper.cs" />
     <Compile Include="Helpers\Grouping.cs" />
     <Compile Include="Helpers\LoginStatus.cs" />
     <Compile Include="Helpers\ProcedureParams.cs" />
