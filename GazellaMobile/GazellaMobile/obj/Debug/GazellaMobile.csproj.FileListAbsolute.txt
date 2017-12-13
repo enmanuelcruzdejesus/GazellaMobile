@@ -113,7 +113,6 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.App.xaml.g.cs
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.LoginPage.xaml.g.cs
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.MainPage.xaml.g.cs
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.QueryPage.xaml.g.cs
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.AuthorizationPage.xaml.g.cs
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.SettingsPage.xaml.g.cs
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.AuthorizationDetails.xaml.g.cs

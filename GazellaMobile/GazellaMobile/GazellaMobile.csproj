@@ -40,17 +40,17 @@
     </Compile>
     <Compile Include="Helpers\AuthConfirmation.cs" />
     <Compile Include="Helpers\DataServiceHelper.cs" />
-    <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Utils\System\DateTimeHelper.cs" />
     <Compile Include="Helpers\GDSNetworkConnectivity.cs" />
-    <Compile Include="Helpers\GDSServiceClient.cs" />
+    <Compile Include="Utils\Services\GDSServiceClient.cs" />
     <Compile Include="Helpers\GDSViewHelper.cs" />
     <Compile Include="Helpers\Grouping.cs" />
-    <Compile Include="Helpers\LoginStatus.cs" />
-    <Compile Include="Helpers\ProcedureParams.cs" />
+    <Compile Include="Utils\Services\LoginStatus.cs" />
+    <Compile Include="Utils\Services\ProcedureParams.cs" />
     <Compile Include="Interfaces\ISQLConnection.cs" />
-    <Compile Include="ViewModels\Models\AppSettings.cs" />
-    <Compile Include="ViewModels\Models\Authorizations.cs" />
-    <Compile Include="ViewModels\Models\User.cs" />
+    <Compile Include="Models\AppSettings.cs" />
+    <Compile Include="Models\Authorizations.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AuthorizationDetailsViewModel.cs" />
     <Compile Include="ViewModels\AuthorizationViewModel.cs" />
@@ -70,9 +70,6 @@
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\QueryPage.xaml.cs">
-      <DependentUpon>QueryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReportDetailsPage.xaml.cs">
       <DependentUpon>ReportDetailsPage.xaml</DependentUpon>
@@ -146,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converters\" />
+    <Folder Include="Utils\FileSystem\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\LoginPage.xaml">
@@ -155,12 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MainPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\QueryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

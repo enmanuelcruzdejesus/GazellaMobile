@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GazellaMobile.Helpers
+namespace GazellaMobile.Utils.Services
 {
     public class LoginStatus
     {

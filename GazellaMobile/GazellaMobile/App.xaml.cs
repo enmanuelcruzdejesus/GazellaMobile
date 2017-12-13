@@ -14,6 +14,7 @@ using GazellaMobile.Models;
 using GazellaMobile.Helpers;
 using GazellaMobile.Views;
 using GazellaMobile.Interfaces;
+using GazellaMobile.Utils.Services;
 
 namespace GazellaMobile
 {

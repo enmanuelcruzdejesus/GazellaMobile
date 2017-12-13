@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using GazellaMobile.Utils.System;
+
 namespace GazellaMobile.Helpers
 {
    public class GDSViewHelper

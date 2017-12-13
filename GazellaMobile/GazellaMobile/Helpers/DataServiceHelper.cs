@@ -6,8 +6,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using GazellaMobile.Models;
-using System.Diagnostics;
+
+using GazellaMobile.Utils.Services;
 
 namespace GazellaMobile.Helpers
 {
