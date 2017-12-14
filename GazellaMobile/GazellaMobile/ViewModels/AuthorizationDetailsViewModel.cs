@@ -138,7 +138,6 @@ namespace GazellaMobile.ViewModels
 
         private async void OnAccept()
         {
-
             AuthConfirmation auth = new AuthConfirmation
               (
                 App.CurrentUser.UserId,
@@ -149,10 +148,10 @@ namespace GazellaMobile.ViewModels
 
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);
-            await Task.Delay(2000);
-            TabbedPage page = (TabbedPage)App.Current.MainPage;
-            await page.Children[0].Navigation.PopAsync();
-
+            await Task.Delay(2000);         
+            TabbedPage page = (TabbedPage)App.Current.MainPage;         
+            await page.Children[1].Navigation.PopAsync();
+            
 
 
         }
@@ -168,13 +167,10 @@ namespace GazellaMobile.ViewModels
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
             UserDialogs.Instance.ShowSuccess(responseMessage);
             await Task.Delay(2000);
-            TabbedPage page = (TabbedPage)App.Current.MainPage;
-            await page.Children[0].Navigation.PopAsync();
-
+            TabbedPage page = (TabbedPage)App.Current.MainPage;          
+            await page.Children[1].Navigation.PopAsync();
 
         }
-
-
 
         
     }
