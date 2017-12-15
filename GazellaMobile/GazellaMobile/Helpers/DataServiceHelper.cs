@@ -130,6 +130,7 @@ namespace GazellaMobile.Helpers
                     DefaultValue = data["DefaultValue"][i],
                     Sequence = data["Sequence"][i],
                     ReadOnly = data["ReadOnly"][i],
+                    ListId = data["ListId"][i]
 
                 };
             }
