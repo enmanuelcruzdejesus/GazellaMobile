@@ -74,12 +74,13 @@ namespace GazellaMobile.Helpers
           else
           {
                 var comboValues = sender.ObjectValue.ToString().Split(',');
-                control = new Picker()
-                {
-                    SelectedIndex = 0,
-                    ItemsSource  = comboValues
-
-                };
+                Picker p = new Picker();
+                p.ItemsSource = comboValues;
+                p.SelectedIndex = 0;
+                p.SelectedItem = p.Items[p.SelectedIndex];
+                control = p;
+                
+                
           }
 
 

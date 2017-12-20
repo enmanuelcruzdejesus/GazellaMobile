@@ -116,8 +116,8 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.AuthorizationPage.xaml.g.cs
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.SettingsPage.xaml.g.cs
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.AuthorizationDetails.xaml.g.cs
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.ReportsPage.xaml.g.cs
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.ReportDetailsPage.xaml.g.cs
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.pdb
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.csprojResolveAssemblyReference.cache
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.ReportsPage.xaml.g.cs
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.ReportDetailsPage.xaml.g.cs
