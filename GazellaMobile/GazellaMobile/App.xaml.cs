@@ -110,6 +110,7 @@ namespace GazellaMobile
             }
 
         }
+        public static int Cia { get { return 1; } }
   
         #endregion
 

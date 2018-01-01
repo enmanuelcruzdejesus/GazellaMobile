@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using Rg.Plugins.Popup.Services;
 using GazellaMobile.ViewModels;
 using GazellaMobile.Helpers;
-using System.Diagnostics;
+using GazellaMobile.Views.CustomControls;
 
 namespace GazellaMobile.Views
 {
@@ -35,14 +36,15 @@ namespace GazellaMobile.Views
         {
             var parameters = await _vm.Data;
 
+            //Setting up the Grid Columnns
             Grid gridLayout = new Grid();
             gridLayout.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-            gridLayout.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Absolute) });            
+            gridLayout.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Absolute) });
+            //Setting up the Grid Rows
             for (int i = 0; i < parameters.Count(); i++)
             {
                 gridLayout.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) });
             }
-
             for (int i = 0; i < gridLayout.RowDefinitions.Count; i++)
             {
                 for (int x = 0; x < gridLayout.ColumnDefinitions.Count; x++)
@@ -60,7 +62,7 @@ namespace GazellaMobile.Views
                         _listOfControls.Add(control);
                         stack.Children.Add(labelObject);
                         stack.Children.Add(control);
-                        
+
                         gridLayout.Children.Add(stack, x, i);
                     }
                     else
@@ -70,10 +72,52 @@ namespace GazellaMobile.Views
                         {
                             Image searchImg = new Image();
                             searchImg.Source = "iconsearchblue.png";
+                            searchImg.BindingContext = _listOfControls[i];
                             var tapGestureRecognizer = new TapGestureRecognizer();
-                            tapGestureRecognizer.Tapped += async (s, e) => {
+                            tapGestureRecognizer.Tapped += async (s, e) =>
+                            {
                                 // handle the tap
-                                await DisplayAlert("TapGesture","Hello World!!", "OK");
+                                View control = ((Image)s).BindingContext as View;
+                                dynamic param = control.BindingContext;
+                                int listId = Convert.ToInt32(param.ListId);
+                                var searchData = await App.ServiceClient.GetSearchList(listId);
+                                //creating the Search Dialog
+                                var searchList = new SearchListDialog(searchData);
+
+                                //Creating the Transparent Popup Page
+                                //of type string since we need a string return
+                                var popup = new InputDialogBase<string>(searchList);
+
+                                //Suscribing to the SearchListDialog's Tapped Event
+                                searchList.TappedEvent += (sender, args) =>
+                               {
+                                   SearchListDialog obj = (SearchListDialog)sender;
+                                   dynamic item = (dynamic)args.Item;
+
+                                   obj.Result = Convert.ToString(item.Title);
+
+                                    ///Updating the page completion source
+                                    popup.PageClosedComplitionSource.SetResult(obj.Result);
+
+                                   obj.TappedEvent = null;
+
+
+                               };
+                                //Pushing the page to the navigation stack
+                                await PopupNavigation.PushAsync(popup);
+
+                                //awaiting for the result 
+                                var result = await popup.PageClosedTask;
+
+                                //Poping the page from Navigation Stack
+                                await PopupNavigation.PopAsync();
+
+                                //Initializing the control with the result
+                                Entry entry = (Entry)control;
+                                entry.Text = result;
+
+
+
                             };
                             searchImg.GestureRecognizers.Add(tapGestureRecognizer);
                             gridLayout.Children.Add(searchImg, x, i);
@@ -84,7 +128,7 @@ namespace GazellaMobile.Views
             StackLayout mainStackLayout = new StackLayout();
             mainStackLayout.Children.Add(gridLayout);
             Button btnPreview = new Button() { Text = "Vista Previa", Style = (Style)App.Current.Resources["buttonStyle"] };
-            btnPreview.Clicked += async (sender, e) => 
+            btnPreview.Clicked += async (sender, e) =>
             {
                 //Getting data from parameters
                 string data = string.Empty;
@@ -92,71 +136,34 @@ namespace GazellaMobile.Views
                 {
                     if (_listOfControls[i] is Entry)
                     {
-                        //Skipping comma at the end, If we are in the last iteration.
-                        if (i == _listOfControls.Count - 1)
-                        {
-                            Entry entry = (Entry)_listOfControls[i];
-                            data += entry.Text;
-
-                        }
-                        else
-                        {
-                            Entry entryObject = (Entry)_listOfControls[i];
-                            data += entryObject.Text + ",";
-                        }
-
-
+                        Entry entry = (Entry)_listOfControls[i];
+                        data += entry.Text;
                     }
                     else if (_listOfControls[i] is DatePicker)
                     {
-                        //Skipping comma at the end, If we are in the last iteration.
-                        if (i == _listOfControls.Count - 1)
-                        {
-                            DatePicker datePicker = (DatePicker)_listOfControls[i];
-                            data += datePicker.Date.ToString();
-                        }
-                        else
-                        {
-                            DatePicker datePickerObject = (DatePicker)_listOfControls[i];
-                            data += datePickerObject.Date.ToString() + ",";
-                        }
-                        
+                        DatePicker datePicker = (DatePicker)_listOfControls[i];
+                        data += datePicker.Date.ToString();
                     }
-                    else if(_listOfControls[i] is Picker)
+                    else if (_listOfControls[i] is Picker)
                     {
-                        //Skipping comma at the end, If we are in the last iteration.
-                        if (i == _listOfControls.Count - 1)
-                        {
-                            Picker picker = (Picker)_listOfControls[i];
-                            data += picker.SelectedItem.ToString();                         
-                        }
-                        else
-                        {
-                            Picker pickerObject = (Picker)_listOfControls[i];
-                            data += pickerObject.SelectedItem.ToString() + ",";
-                        }
-                        
+                        Picker picker = (Picker)_listOfControls[i];
+                        data += picker.SelectedItem.ToString();
                     }
-                    else if(_listOfControls[i] is Switch)
+                    else if (_listOfControls[i] is Switch)
                     {
-                        //Skipping comma at the end, If we are in the last iteration.
-                        if (i == _listOfControls.Count - 1)
-                        {
-                            Switch swtich = (Switch)_listOfControls[i];
-                            data += swtich.IsToggled.ToString();
+                        Switch swtich = (Switch)_listOfControls[i];
+                        data += swtich.IsToggled.ToString();
+                    }
 
-                        }
-                        else
-                        {
-                            Switch switchObject = (Switch)_listOfControls[i];
-                            data += switchObject.IsToggled.ToString() + ",";
-                        }
-
+                    if (i != _listOfControls.Count - 1)
+                    {
+                        data += ',';
                     }
                 }
 
+
                 await DisplayAlert("Preview", data, "OK");
-                
+
             };
             mainStackLayout.Children.Add(btnPreview);
             this.Content = new ScrollView()
@@ -164,11 +171,6 @@ namespace GazellaMobile.Views
                 Content = mainStackLayout
             };
         }
-
-
-
-
-
 
     }
 }

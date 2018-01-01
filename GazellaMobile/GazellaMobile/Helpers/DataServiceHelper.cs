@@ -130,7 +130,8 @@ namespace GazellaMobile.Helpers
                     DefaultValue = data["DefaultValue"][i],
                     Sequence = data["Sequence"][i],
                     ReadOnly = data["ReadOnly"][i],
-                    ListId = data["ListId"][i]
+                    ListId = data["ListId"][i],
+                    ListDescrip = data["ListDescrip"][i]
 
                 };
             }
@@ -138,6 +139,27 @@ namespace GazellaMobile.Helpers
             return dinamycArray;
             
         }
+        public async Task<dynamic[]> GetSearchList(int SearchList)
+        {
+             if (SearchList <= 0)
+                 return null;
+             
+             var data = await ExecProcedureData(new ProcedureParams() { procedureName = "gm_get_SearchList", paramValues = string.Format("{0},{1}", App.Cia, SearchList.ToString()) });
+             var records = data["Title"].Count;
+             dynamic[] dinamycArray = new dynamic[records];
+             for (int i = 0; i<records; i++)
+             {
+                 dinamycArray[i] = new
+                 {
+                     Title = data["Title"][i],
+                     Detail = data["Detail"][i],                   
+                 };
+             }
+             
+             return dinamycArray;
+
+         }
+
         public async Task<Dictionary<string, List<object>>> ExecProcedureData(ProcedureParams p)
         {
             var response = await _service.Post<ProcedureParams>("GDSApi", p);

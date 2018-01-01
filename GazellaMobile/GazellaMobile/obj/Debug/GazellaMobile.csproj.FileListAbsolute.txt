@@ -81,6 +81,7 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Plugin.Connectivity.Abstractions.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Plugin.Connectivity.dll
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Rg.Plugins.Popup.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Splat.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\SQLite-net.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\SQLitePCLRaw.batteries_green.dll
@@ -98,6 +99,7 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Plugin.Connectivity.xml
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Plugin.Connectivity.Abstractions.pdb
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Plugin.Connectivity.Abstractions.xml
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Rg.Plugins.Popup.pdb
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\SQLite-net.pdb
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\SQLite-net.xml
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\System.Net.Http.xml
@@ -105,7 +107,6 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Xamarin.Forms.Core.pdb
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Xamarin.Forms.Core.xml
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Xamarin.Forms.Platform.pdb
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.csproj.App.config
@@ -120,4 +121,4 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.ReportDetailsPage.xaml.g.cs
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.pdb
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.csprojResolveAssemblyReference.cache
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\obj\Debug\GazellaMobile.Views.CustomControl.SearchListDialog.xaml.g.cs

@@ -22,7 +22,7 @@ namespace GazellaMobile.Helpers
                         Text = sender.DefaultValue.ToString(),
                         Keyboard = Keyboard.Numeric,
                         Style = (Style)App.Current.Resources["entryStyle"]
-                    };
+                    };                    
                 }
                 else
                 {
@@ -83,7 +83,7 @@ namespace GazellaMobile.Helpers
                 
           }
 
-
+            control.BindingContext = sender;
             return control;
       }
    }
