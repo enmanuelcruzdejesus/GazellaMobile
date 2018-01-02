@@ -12,22 +12,23 @@ namespace GazellaMobile.Views.CustomControls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SearchListDialog : ContentView
     {
-        
+        dynamic[] _data;
         public string Result { get; set; }
         public EventHandler<ItemTappedEventArgs> TappedEvent;
         public SearchListDialog(dynamic[] data)
         {
             InitializeComponent();
-            this.searchDialogListView.ItemsSource = data;
+            _data = data;
+            this.searchDialogListView.ItemsSource = _data;
             this.searchDialogListView.ItemTapped += searchDialogListView_ItemTapped;
             
         }
-
-       
-
+      
         private void searchListSearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            var keyboard = searchListSearchBar.Text;
+            var searchResult = _data.Where(s => s.Detail.ToLower().Contains(keyboard.ToLower()));
+            this.searchDialogListView.ItemsSource = searchResult;
         }
 
         private void searchDialogListView_ItemTapped(object sender, ItemTappedEventArgs e)

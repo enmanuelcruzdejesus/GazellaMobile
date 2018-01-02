@@ -57,10 +57,10 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\ob
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Resources.ResourceManager.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Diagnostics.Tools.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Dynamic.Runtime.dll
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Linq.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Runtime.Extensions.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Linq.Expressions.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Net.Primitives.dll
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Linq.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Text.Encoding.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.ComponentModel.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Xml.ReaderWriter.dll

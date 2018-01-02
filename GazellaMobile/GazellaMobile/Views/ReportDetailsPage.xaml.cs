@@ -14,6 +14,7 @@ namespace GazellaMobile.Views
     public partial class ReportDetailsPage : ContentPage
     {
         ReportDetailsViewModel _vm;
+        dynamic[] _data;
         public ReportDetailsPage(ReportDetailsViewModel viewModel)
         {
             InitializeComponent();
@@ -22,7 +23,8 @@ namespace GazellaMobile.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            this.reportDetailsListView.ItemsSource = await _vm.Data;
+            _data = await _vm.Data;
+            this.reportDetailsListView.ItemsSource = _data;
         }
 
         private async  void reportDetailsListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -36,7 +38,9 @@ namespace GazellaMobile.Views
 
         private void reportSearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            var keyboard = reportSearchBar.Text;
+            var searchResult = _data.Where(r => r.ProgramDescrip.ToLower().Contains(keyboard.ToLower()));
+            this.reportDetailsListView.ItemsSource = searchResult;
         }
     }
 }

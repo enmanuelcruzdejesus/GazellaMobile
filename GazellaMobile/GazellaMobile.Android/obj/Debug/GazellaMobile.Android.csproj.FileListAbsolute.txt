@@ -240,6 +240,7 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\ob
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\bin\Debug\GazellaMobile.Android.dll
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile\bin\Debug\GazellaMobile.dll
 bin\Debug\GazellaMobile.dll.mdb
 bin\Debug\Microsoft.CSharp.pdb
 bin\Debug\Mono.Android.pdb
