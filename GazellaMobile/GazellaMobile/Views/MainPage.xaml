@@ -7,20 +7,20 @@
 
 
 
-    <NavigationPage Title="Reportes" Icon="reports2img.png" Tint="{StaticResource bgColor}">
+    <NavigationPage  Icon="reports2img.png" Tint="{StaticResource bgColor}">
         <x:Arguments>
             <local:ReportsPage/>
         </x:Arguments>
     </NavigationPage>
     
     
-    <NavigationPage Title="Autorizaciones" Icon="authorizationiconblack.png" Tint="{StaticResource bgColor}">
+    <NavigationPage Icon="authorizationiconblack.png" Tint="{StaticResource bgColor}">
         <x:Arguments>
             <local:AuthorizationPage/>
         </x:Arguments>
     </NavigationPage>
 
-    <NavigationPage Title="Configuracion" Icon="settingsiconblack.png" Tint="{StaticResource bgColor}">
+    <NavigationPage  Icon="settingsiconblack.png" Tint="{StaticResource bgColor}">
         <x:Arguments>
             <local:SettingsPage/>
         </x:Arguments>

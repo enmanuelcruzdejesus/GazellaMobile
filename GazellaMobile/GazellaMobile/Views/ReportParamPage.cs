@@ -15,6 +15,7 @@ namespace GazellaMobile.Views
     {
         ReportParamViewModel _vm;
         List<View> _listOfControls;
+        dynamic[] _parameters;
         public ReportParamPage(ReportParamViewModel viewModel)
         {
             this.Title = "Parametros";
@@ -26,22 +27,23 @@ namespace GazellaMobile.Views
             _listOfControls = new List<View>();           
             
         }
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
+            _parameters = await _vm.Data;
             RenderParams();
         }
 
-        private async void RenderParams()
+        private  void RenderParams()
         {
-            var parameters = await _vm.Data;
+            var visualParameters = _parameters.Where(r => r.Visible.ToString() == "Y").ToList();
 
             //Setting up the Grid Columnns
             Grid gridLayout = new Grid();
             gridLayout.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             gridLayout.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Absolute) });
             //Setting up the Grid Rows
-            for (int i = 0; i < parameters.Count(); i++)
+            for (int i = 0; i < visualParameters.Count(); i++)
             {
                 gridLayout.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) });
             }
@@ -54,10 +56,10 @@ namespace GazellaMobile.Views
                     {
                         Label labelObject = new Label()
                         {
-                            Text = parameters[i].Caption.ToString(),
+                            Text = visualParameters[i].Caption.ToString(),
                             Style = (Style)App.Current.Resources["titleLabel2Style"]
                         };
-                        View control = GDSViewHelper.CreateControl(parameters[i]);
+                        View control = GDSViewHelper.CreateControl(visualParameters[i]);
                         StackLayout stack = new StackLayout();
                         _listOfControls.Add(control);
                         stack.Children.Add(labelObject);
@@ -68,7 +70,7 @@ namespace GazellaMobile.Views
                     else
                     {
                         //Rendering the second Column with the search
-                        if (parameters[i].ListId > 0)
+                        if (visualParameters[i].ListId > 0)
                         {
                             Image searchImg = new Image();
                             searchImg.Source = "iconsearchblue.png";
@@ -132,12 +134,38 @@ namespace GazellaMobile.Views
             {
                 //Getting data from parameters
                 string data = string.Empty;
+                var novisualParameters = _parameters.Where(p => p.Visible.ToString() == "N");
                 for (int i = 0; i < _listOfControls.Count; i++)
                 {
                     if (_listOfControls[i] is Entry)
                     {
                         Entry entry = (Entry)_listOfControls[i];
-                        data += entry.Text;
+                        var param = (dynamic)entry.BindingContext;
+                        var iniLine = Convert.ToInt32(param.IniLine);
+                        if(iniLine > 0)
+                        {
+                            if (string.IsNullOrEmpty(entry.Text))
+                            {
+                                string value1 = " ";
+                                if (param.DataType.ToString() == "N")
+                                    value1 = "0";
+                                
+                                var value2 = novisualParameters.Single(p => p.Sequence == iniLine).DefaultValue.ToString();
+                                data += value1 + ',' + value2;
+                            }
+                            else
+                            {
+                                var value1 = entry.Text;
+                                var value2 = entry.Text;
+                                data += value1 + ',' + value2;
+                            }                            
+                            
+                            
+                        }
+                        else
+                        {
+                            data += entry.Text;
+                        }                        
                     }
                     else if (_listOfControls[i] is DatePicker)
                     {
@@ -159,9 +187,8 @@ namespace GazellaMobile.Views
                     {
                         data += ',';
                     }
+
                 }
-
-
                 await DisplayAlert("Preview", data, "OK");
 
             };

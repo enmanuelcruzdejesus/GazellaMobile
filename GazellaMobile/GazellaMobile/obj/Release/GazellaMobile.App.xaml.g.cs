@@ -11,8 +11,7 @@
 namespace GazellaMobile {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/acruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/Gazella" +
-        "Mobile/App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\ecruz\\Source\\Repos\\GazellaMobile\\GazellaMobile\\GazellaMobile\\App.xaml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

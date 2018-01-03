@@ -15,7 +15,7 @@ namespace GazellaMobile.Views.CustomControls
                 return PageClosedComplitionSource.Task;
             } }
        //the task completion source
-       public TaskCompletionSource<T> PageClosedComplitionSource { get; set; }
+        public TaskCompletionSource<T> PageClosedComplitionSource { get; set; }
         public InputDialogBase(View contentBody)
         {
             Content = contentBody;

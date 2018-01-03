@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>ZTE Blade A510</SelectedDevice>
     <DefaultDevice>MyNexus6</DefaultDevice>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

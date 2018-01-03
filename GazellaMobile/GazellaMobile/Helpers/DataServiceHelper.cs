@@ -129,9 +129,11 @@ namespace GazellaMobile.Helpers
                     ObjectValue  = data["ObjectValue"][i],
                     DefaultValue = data["DefaultValue"][i],
                     Sequence = data["Sequence"][i],
+                    IniLine = data["IniLine"][i],
                     ReadOnly = data["ReadOnly"][i],
                     ListId = data["ListId"][i],
-                    ListDescrip = data["ListDescrip"][i]
+                    ListDescrip = data["ListDescrip"][i],
+                    Visible = data["Visible"][i]
 
                 };
             }
