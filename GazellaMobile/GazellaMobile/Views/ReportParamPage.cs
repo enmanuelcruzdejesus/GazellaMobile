@@ -50,7 +50,8 @@ namespace GazellaMobile.Views
                 _listOfControls.Add(control);
 
             }
-            Button btnPreview = new Button() { Text = "Vista Previa", Style = (Style)App.Current.Resources["buttonStyle"] };
+            Button btnPreview = new Button() { Text = "Vista Previa", Style = (Style)App.Current.Resources["buttonStyle"]  };
+
 
             mainStackLayout.Children.Add(btnPreview);
 

@@ -6,119 +6,98 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using GazellaMobile.Utils.System;
 using GazellaMobile.Views.CustomControls;
+using Rg.Plugins.Popup.Services;
+using System.Diagnostics;
 
 namespace GazellaMobile.Views.Helpers
 {
    public class GDSViewHelper
    {
-      public static View CreateControl(dynamic sender)
-      {
-          View control;
-          if(sender.ObjectType == "TextBox")
-          {
-                //IF THE CONTROL HAS A LIST ASSIGNED
-                if(sender.ListId > 0)
-                {
-                    if (sender.DataType == "N")
-                    {
-                        control = new ButtonEntry() 
-                        {
-                            Text = sender.DefaultValue.ToString(),
-                            Style = (Style)App.Current.Resources["entryStyle"],
-                            Image  = "searchicon.png",
-                            Keyboard = Keyboard.Numeric
-                        };
-                       
-                    }
-                    else
-                    {
-                        control = new ButtonEntry()
-                        {
-                            Text = sender.DefaultValue.ToString(),
-                            Style = (Style)App.Current.Resources["entryStyle"],
-                            Image = "searchicon.png"
 
-                        };
-                        
-                    }
-                }
-                else
-                {
-                    //NO SEARCHLIST
-                    if (sender.DataType == "N")
-                    {
-                        control = new Entry()
-                        {
-                            Text = sender.DefaultValue.ToString(),
-                            Keyboard = Keyboard.Numeric,
-                            Style = (Style)App.Current.Resources["entryStyle"]
-                        };
-                    }
-                    else
-                    {
-                        control = new Entry()
-                        {
-                            Text = sender.DefaultValue.ToString(),
-                            Style = (Style)App.Current.Resources["entryStyle"]
-                        };
-                    }
-                    
-                }
+        private async static void OnSearch(object sender)
+        {
+            // handle the tap
+            ButtonEntry entry = (ButtonEntry)sender;                dynamic param = entry.BindingContext;             int listId = Convert.ToInt32(param.ListId);
+       
+ 
+             var searchData = await App.ServiceClient.GetSearchList(listId);             //creating the Search Dialog             var searchList = new SearchListDialog(searchData);              //Creating the Transparent Popup Page             //of type string since we need a string return             var popup = new InputDialogBase<string>(searchList);              //Suscribing to the SearchListDialog's Tapped Event             searchList.TappedEvent += (s, args) =>             {                SearchListDialog obj = (SearchListDialog)s;                dynamic item = (dynamic)args.Item;                 obj.Result = Convert.ToString(item.Title);                  ///Updating the page completion source                 popup.PageClosedComplitionSource.SetResult(obj.Result);                 obj.TappedEvent = null;               };             //Pushing the page to the navigation stack             await PopupNavigation.PushAsync(popup);              //awaiting for the result              var result = await popup.PageClosedTask;              //Poping the page from Navigation Stack             await PopupNavigation.PopAsync();              //Initializing the control with the result             entry.Text = result;            
+          
+        }
 
-
-          }
-          else if(sender.ObjectType == "DateBox")
-          {
-                if(sender.ObjectValue == "BEGINDATE")
-                {
-                    control = new DatePicker()
-                    {
-                        Date = DateTime.Now.FirstDayOfMonth(),
-                        Format = "D"
-                    };
-                    
-                }else if(sender.ObjectValue == "ENDDATE")
-                {
-                    control = new DatePicker()
-                    {
-                        Date = DateTime.Now.LastDayOfMonth(),
-                        Format = "D"
-                    };
-                }
-                else
-                {
-                    control = new DatePicker()
-                    {
-                        Date = DateTime.Now,
-                        Format = "D"
-                    };
-                }
-
-            }
-            else if(sender.ObjectType == "CheckBox")
+        public static View CreateControl(dynamic sender)
+        {
+            if (sender.ObjectType == "TextBox")
             {
-                bool isChecked = sender.ObjectValue == "S";
-                control = new Switch()
+                //IF THE CONTROL HAS A LIST ASSIGNED
+                if (sender.ListId > 0)
                 {
-                    HorizontalOptions = LayoutOptions.Start,
-                   IsToggled = isChecked
-                   
-                };
-            }
-          else
-          {
-                var comboValues = sender.ObjectValue.ToString().Split(',');
-                Picker p = new Picker();
-                p.ItemsSource = comboValues;
-                p.SelectedIndex = 0;
-                p.SelectedItem = p.Items[p.SelectedIndex];
-                control = p;
-                
-                
-          }
+                    ButtonEntry control = new ButtonEntry()
+                    {
+                        Text = sender.DefaultValue.ToString(),
+                        Style = (Style)App.Current.Resources["entryStyle"],
+                        Image = "searchicon.png"
+                    };
 
-            control.BindingContext = sender;
-            return control;
-      }
+                    control.Command = new Command(() => OnSearch(control));
+                       
+                    if (sender.DataType == "N")
+                        control.Keyboard = Keyboard.Numeric;
+
+                    control.BindingContext = sender;
+                    return control; 
+                }
+                else
+                {
+                    Entry control = new Entry()
+                    {
+                        Text = sender.DefaultValue.ToString(),
+                        Keyboard = Keyboard.Numeric,
+                        Style = (Style)App.Current.Resources["entryStyle"]
+                    };
+                    if (sender.DataType == "N")
+                        control.Keyboard = Keyboard.Numeric;
+
+                    control.BindingContext = sender;
+                    return control;
+ 
+                }
+ 
+            }
+            else if (sender.ObjectType == "DateBox")
+            {
+                DatePicker control = new DatePicker()
+                {
+                    Date = DateTime.Now,
+                    Format = "D"
+                };
+
+
+                if (sender.ObjectValue == "BEGINDATE")
+                    control.Date = DateTime.Now.FirstDayOfMonth();
+                
+                if(sender.ObjectValue == "ENDDATE")
+                 control.Date = DateTime.Now.LastDayOfMonth();
+
+                control.BindingContext = sender;
+                return control;
+            }
+            else if (sender.ObjectType == "CheckBox")
+            {
+                bool isChecked = sender.ObjectValue == "S";                 Switch control = new Switch()                 {                     HorizontalOptions = LayoutOptions.Start,
+                    IsToggled = isChecked
+
+                };
+                control.BindingContext = sender;
+                return control;
+            }
+            else
+            {
+                var comboValues = sender.ObjectValue.ToString().Split(',');                 Picker control = new Picker();                 control.ItemsSource = comboValues;                 control.SelectedIndex = 0;                 control.SelectedItem = control.Items[control.SelectedIndex];
+                control.BindingContext = sender;                 return control; 
+            } 
+         
+        }
+
+       
    }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using GazellaMobile.ViewModels;
+using Rg.Plugins.Popup.Services;
 
 namespace GazellaMobile.Views
 {
@@ -32,6 +33,8 @@ namespace GazellaMobile.Views
             dynamic item = (dynamic)e.Item;
             int reportId = Convert.ToInt32(item.ReportId);
             await Navigation.PushAsync(new ReportParamPage(new ReportParamViewModel(reportId)));
+           
+
 
         }
 
