@@ -43,7 +43,6 @@
     <Compile Include="Utils\System\DateTimeHelper.cs" />
     <Compile Include="Helpers\GDSNetworkConnectivity.cs" />
     <Compile Include="Utils\Services\GDSServiceClient.cs" />
-    <Compile Include="Helpers\GDSViewHelper.cs" />
     <Compile Include="Helpers\Grouping.cs" />
     <Compile Include="Utils\Services\LoginStatus.cs" />
     <Compile Include="Utils\Services\ProcedureParams.cs" />
@@ -85,6 +84,8 @@
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Helpers\GDSViewHelper.cs" />
+    <Compile Include="Views\CustomControl\ButtonEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -151,6 +152,7 @@
   <ItemGroup>
     <Folder Include="Converters\" />
     <Folder Include="Utils\FileSystem\" />
+    <Folder Include="Views\Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\LoginPage.xaml">

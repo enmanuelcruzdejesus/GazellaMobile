@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using GazellaMobile.Utils.System;
+using GazellaMobile.Views.CustomControls;
 
-namespace GazellaMobile.Helpers
+namespace GazellaMobile.Views.Helpers
 {
    public class GDSViewHelper
    {
@@ -15,23 +16,56 @@ namespace GazellaMobile.Helpers
           View control;
           if(sender.ObjectType == "TextBox")
           {
-                if(sender.DataType == "N")
+                //IF THE CONTROL HAS A LIST ASSIGNED
+                if(sender.ListId > 0)
                 {
-                    control = new Entry()
-                    {                      
-                        Text = sender.DefaultValue.ToString(),
-                        Keyboard = Keyboard.Numeric,
-                        Style = (Style)App.Current.Resources["entryStyle"]
-                    };                    
+                    if (sender.DataType == "N")
+                    {
+                        control = new ButtonEntry() 
+                        {
+                            Text = sender.DefaultValue.ToString(),
+                            Style = (Style)App.Current.Resources["entryStyle"],
+                            Image  = "searchicon.png",
+                            Keyboard = Keyboard.Numeric
+                        };
+                       
+                    }
+                    else
+                    {
+                        control = new ButtonEntry()
+                        {
+                            Text = sender.DefaultValue.ToString(),
+                            Style = (Style)App.Current.Resources["entryStyle"],
+                            Image = "searchicon.png"
+
+                        };
+                        
+                    }
                 }
                 else
                 {
-                    control = new Entry() 
+                    //NO SEARCHLIST
+                    if (sender.DataType == "N")
                     {
-                        Text = sender.DefaultValue.ToString(),
-                        Style = (Style)App.Current.Resources["entryStyle"]
-                    };
+                        control = new Entry()
+                        {
+                            Text = sender.DefaultValue.ToString(),
+                            Keyboard = Keyboard.Numeric,
+                            Style = (Style)App.Current.Resources["entryStyle"]
+                        };
+                    }
+                    else
+                    {
+                        control = new Entry()
+                        {
+                            Text = sender.DefaultValue.ToString(),
+                            Style = (Style)App.Current.Resources["entryStyle"]
+                        };
+                    }
+                    
                 }
+
+
           }
           else if(sender.ObjectType == "DateBox")
           {
