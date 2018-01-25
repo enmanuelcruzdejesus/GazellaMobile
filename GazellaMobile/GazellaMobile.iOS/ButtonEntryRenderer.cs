@@ -1,38 +1,62 @@
 ﻿using System;
 using CoreGraphics;
-using UIKit;
-using Xamarin.Forms.Platform.iOS;
-using Xamarin.Forms;
-using GazellaMobile.Views.CustomControls;
 using GazellaMobile.iOS;
+using GazellaMobile.Views.CustomControls;
+using UIKit;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
-[assembly:ExportRenderer(typeof(ButtonEntry),typeof(ButtonEntryRenderer))]
+
+[assembly: ExportRenderer(typeof(ButtonEntry), typeof(ButtonEntryRenderer))]
 namespace GazellaMobile.iOS
 {
-    
-    public class ButtonEntryRenderer: EntryRenderer
+    public class ButtonEntryRenderer : EntryRenderer
     {
-       
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Entry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
-            
-            if(Control!= null){
 
+            if (Control != null)
+            {
                 var element = (ButtonEntry)this.Element;
-                UIButton overlayButton = UIButton.FromType(UIButtonType.System);
-                overlayButton.Frame = new CGRect(0, 0, 25, 25);
-                overlayButton.SetImage(UIImage.FromFile(element.Image), UIControlState.Normal);
-                overlayButton.TouchUpInside += (sender, args) =>
+
+
+                if (!string.IsNullOrEmpty(element.RightImage))
                 {
-                   element.Command.Execute(null); 
-                };
-                this.Control.RightViewMode = UITextFieldViewMode.Always;
-                this.Control.RightView = overlayButton; 
+                    UIButton rightButton = UIButton.FromType(UIButtonType.System);
+                    rightButton.Frame = new CGRect(0, 0, 25, 25);
+                    rightButton.SetImage(UIImage.FromFile(element.RightImage), UIControlState.Normal);
+                    rightButton.TouchUpInside += (sender, args) =>
+                    {
+                        var textfield = (ButtonEntry)this.Element;
+                        if (textfield.RightClick != null)
+                            textfield.RightClick(textfield, EventArgs.Empty);
+                    };
+
+
+                    this.Control.RightViewMode = UITextFieldViewMode.Always;
+                    this.Control.RightView = rightButton;
+                }
+
+                if (!string.IsNullOrEmpty(element.LeftImage))
+                {
+                    UIButton leftButton = UIButton.FromType(UIButtonType.System);
+                    leftButton.Frame = new CGRect(0, 0, 25, 25);
+                    leftButton.SetImage(UIImage.FromFile(element.LeftImage), UIControlState.Normal);
+                    leftButton.TouchUpInside += (sender, args) =>
+                    {
+                        var textfield = (ButtonEntry)this.Element;
+                        if (textfield.LeftClick != null)
+                            textfield.LeftClick(textfield, EventArgs.Empty);
+                    };
+
+
+                    this.Control.LeftViewMode = UITextFieldViewMode.Always;
+                    this.Control.LeftView = leftButton;
+
+                }
+
             }
-
-
         }
-
     }
 }

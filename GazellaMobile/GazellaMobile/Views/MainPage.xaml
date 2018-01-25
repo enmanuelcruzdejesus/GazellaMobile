@@ -7,7 +7,7 @@
 
 
 
-    <NavigationPage  Icon="reports2img.png" Tint="{StaticResource bgColor}">
+    <NavigationPage  Icon="reportsicon.jpeg" Tint="{StaticResource bgColor}">
         <x:Arguments>
             <local:ReportsPage/>
         </x:Arguments>

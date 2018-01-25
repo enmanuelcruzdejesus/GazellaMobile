@@ -3124,8 +3124,8 @@ containing a value of this type.
         public static int notification_bg_normal=0x7f02010c;
         public static int notification_bg_normal_pressed=0x7f02010d;
         public static int notification_icon_background=0x7f02010e;
-        public static int notification_template_icon_bg=0x7f020118;
-        public static int notification_template_icon_low_bg=0x7f020119;
+        public static int notification_template_icon_bg=0x7f020119;
+        public static int notification_template_icon_low_bg=0x7f02011a;
         public static int notification_tile_bg=0x7f02010f;
         public static int notify_panel_notification_icon_bg=0x7f020110;
         public static int queryicon=0x7f020111;
@@ -3133,8 +3133,9 @@ containing a value of this type.
         public static int reportsimg=0x7f020113;
         public static int roundedbg=0x7f020114;
         public static int roundedbgdark=0x7f020115;
-        public static int settings=0x7f020116;
-        public static int settingsiconblack=0x7f020117;
+        public static int searchicon=0x7f020116;
+        public static int settings=0x7f020117;
+        public static int settingsiconblack=0x7f020118;
     }
     public static final class id {
         public static int action0=0x7f0800a2;

@@ -132,7 +132,6 @@ namespace GazellaMobile.Helpers
                     IniLine = data["IniLine"][i],
                     ReadOnly = data["ReadOnly"][i],
                     ListId = data["ListId"][i],
-                    ListDescrip = data["ListDescrip"][i],
                     Visible = data["Visible"][i]
 
                 };

@@ -1,3 +1,11 @@
+GazellaMobile.Droid.ButtonEditText, GazellaMobile.Android;md56d65a6594facf0333b4f81acc4bb3640.ButtonEditText
+GazellaMobile.Droid.ButtonEditText, GazellaMobile.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56d65a6594facf0333b4f81acc4bb3640.ButtonEditText
+GazellaMobile.Droid.ButtonEditText;md56d65a6594facf0333b4f81acc4bb3640.ButtonEditText
+gazellamobile.droid.ButtonEditText;md56d65a6594facf0333b4f81acc4bb3640.ButtonEditText
+GazellaMobile.Droid.ButtonEntryRenderer, GazellaMobile.Android;md56d65a6594facf0333b4f81acc4bb3640.ButtonEntryRenderer
+GazellaMobile.Droid.ButtonEntryRenderer, GazellaMobile.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56d65a6594facf0333b4f81acc4bb3640.ButtonEntryRenderer
+GazellaMobile.Droid.ButtonEntryRenderer;md56d65a6594facf0333b4f81acc4bb3640.ButtonEntryRenderer
+gazellamobile.droid.ButtonEntryRenderer;md56d65a6594facf0333b4f81acc4bb3640.ButtonEntryRenderer
 GazellaMobile.Droid.MainActivity, GazellaMobile.Android;md56d65a6594facf0333b4f81acc4bb3640.MainActivity
 GazellaMobile.Droid.MainActivity, GazellaMobile.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56d65a6594facf0333b4f81acc4bb3640.MainActivity
 GazellaMobile.Droid.MainActivity;md56d65a6594facf0333b4f81acc4bb3640.MainActivity

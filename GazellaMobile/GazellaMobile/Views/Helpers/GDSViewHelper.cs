@@ -11,17 +11,56 @@ using System.Diagnostics;
 
 namespace GazellaMobile.Views.Helpers
 {
-   public class GDSViewHelper
-   {
+    public class GDSViewHelper
+    {
 
         private async static void OnSearch(object sender)
         {
             // handle the tap
-            ButtonEntry entry = (ButtonEntry)sender;                dynamic param = entry.BindingContext;             int listId = Convert.ToInt32(param.ListId);
-       
- 
-             var searchData = await App.ServiceClient.GetSearchList(listId);             //creating the Search Dialog             var searchList = new SearchListDialog(searchData);              //Creating the Transparent Popup Page             //of type string since we need a string return             var popup = new InputDialogBase<string>(searchList);              //Suscribing to the SearchListDialog's Tapped Event             searchList.TappedEvent += (s, args) =>             {                SearchListDialog obj = (SearchListDialog)s;                dynamic item = (dynamic)args.Item;                 obj.Result = Convert.ToString(item.Title);                  ///Updating the page completion source                 popup.PageClosedComplitionSource.SetResult(obj.Result);                 obj.TappedEvent = null;               };             //Pushing the page to the navigation stack             await PopupNavigation.PushAsync(popup);              //awaiting for the result              var result = await popup.PageClosedTask;              //Poping the page from Navigation Stack             await PopupNavigation.PopAsync();              //Initializing the control with the result             entry.Text = result;            
-          
+            ButtonEntry entry = (ButtonEntry)sender;
+            dynamic param = entry.BindingContext;
+            int listId = Convert.ToInt32(param.ListId);
+
+
+
+            var searchData = await App.ServiceClient.GetSearchList(listId);
+            //creating the Search Dialog
+            var searchList = new SearchListDialog(searchData);
+
+            //Creating the Transparent Popup Page
+            //of type string since we need a string return
+            var popup = new InputDialogBase<string>(searchList);
+
+            //Suscribing to the SearchListDialog's Tapped Event
+            searchList.TappedEvent += (s, args) =>
+            {
+                SearchListDialog obj = (SearchListDialog)s;
+                dynamic item = (dynamic)args.Item;
+
+                obj.Result = Convert.ToString(item.Title);
+
+                ///Updating the page completion source
+                popup.PageClosedComplitionSource.SetResult(obj.Result);
+
+                obj.TappedEvent = null;
+
+
+            };
+            //Pushing the page to the navigation stack
+            await PopupNavigation.PushAsync(popup);
+
+            //awaiting for the result 
+            var result = await popup.PageClosedTask;
+
+            //Poping the page from Navigation Stack
+            await PopupNavigation.PopAsync();
+
+            //Initializing the control with the result
+            entry.CustomText = result;
+
+            entry.Focus();
+
+
         }
 
         public static View CreateControl(dynamic sender)
@@ -33,18 +72,21 @@ namespace GazellaMobile.Views.Helpers
                 {
                     ButtonEntry control = new ButtonEntry()
                     {
-                        Text = sender.DefaultValue.ToString(),
+                        CustomText = sender.DefaultValue.ToString(),
                         Style = (Style)App.Current.Resources["entryStyle"],
-                        Image = "searchicon.png"
+                        RightImage = "searchicon"
                     };
 
-                    control.Command = new Command(() => OnSearch(control));
-                       
+                
+                    control.RightClick += (s, e) => { OnSearch(control); };
+
                     if (sender.DataType == "N")
                         control.Keyboard = Keyboard.Numeric;
 
                     control.BindingContext = sender;
-                    return control; 
+                    
+                    return control;
+
                 }
                 else
                 {
@@ -59,9 +101,11 @@ namespace GazellaMobile.Views.Helpers
 
                     control.BindingContext = sender;
                     return control;
- 
+
+
                 }
- 
+
+
             }
             else if (sender.ObjectType == "DateBox")
             {
@@ -74,16 +118,19 @@ namespace GazellaMobile.Views.Helpers
 
                 if (sender.ObjectValue == "BEGINDATE")
                     control.Date = DateTime.Now.FirstDayOfMonth();
-                
-                if(sender.ObjectValue == "ENDDATE")
-                 control.Date = DateTime.Now.LastDayOfMonth();
+
+                if (sender.ObjectValue == "ENDDATE")
+                    control.Date = DateTime.Now.LastDayOfMonth();
 
                 control.BindingContext = sender;
                 return control;
             }
             else if (sender.ObjectType == "CheckBox")
             {
-                bool isChecked = sender.ObjectValue == "S";                 Switch control = new Switch()                 {                     HorizontalOptions = LayoutOptions.Start,
+                bool isChecked = sender.ObjectValue == "S";
+                Switch control = new Switch()
+                {
+                    HorizontalOptions = LayoutOptions.Start,
                     IsToggled = isChecked
 
                 };
@@ -92,12 +139,19 @@ namespace GazellaMobile.Views.Helpers
             }
             else
             {
-                var comboValues = sender.ObjectValue.ToString().Split(',');                 Picker control = new Picker();                 control.ItemsSource = comboValues;                 control.SelectedIndex = 0;                 control.SelectedItem = control.Items[control.SelectedIndex];
-                control.BindingContext = sender;                 return control; 
-            } 
-         
+                var comboValues = sender.ObjectValue.ToString().Split(',');
+                Picker control = new Picker();
+                control.ItemsSource = comboValues;
+                control.SelectedIndex = 0;
+                control.SelectedItem = control.Items[control.SelectedIndex];
+                control.BindingContext = sender;
+                return control;
+
+            }
+
+
         }
 
-       
-   }
+
+    }
 }
