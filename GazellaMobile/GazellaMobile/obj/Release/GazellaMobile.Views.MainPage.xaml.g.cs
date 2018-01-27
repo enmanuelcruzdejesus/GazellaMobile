@@ -11,8 +11,8 @@
 namespace GazellaMobile.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\ecruz\\Source\\Repos\\GazellaMobile\\GazellaMobile\\GazellaMobile\\Views\\MainP" +
-        "age.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/enmanuelcruz/Projects/enmanuelcruzdejesus/GazellaMobile.git/GazellaMobile/" +
+        "GazellaMobile/Views/MainPage.xaml")]
     public partial class MainPage : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

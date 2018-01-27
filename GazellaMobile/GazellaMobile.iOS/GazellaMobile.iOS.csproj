@@ -105,6 +105,7 @@
     <BundleResource Include="Resources\GazellaMobile.db3" />
     <Compile Include="ButtonEntryRenderer.cs" />
     <BundleResource Include="Resources\searchicon.png" />
+    <BundleResource Include="Resources\reportsicon.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -203,16 +204,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\reportsimg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\reports2img.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\iconsearchblue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\reportsicon.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
