@@ -19,7 +19,7 @@ using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(ButtonEntry), typeof(ButtonEntryRenderer))]
 namespace GazellaMobile.Droid
-{ 
+{
     public class ButtonEntryRenderer : ViewRenderer<ButtonEntry, ButtonEditText>
     {
 
@@ -119,7 +119,7 @@ namespace GazellaMobile.Droid
                 Control.SetCompoundDrawablesWithIntrinsicBounds(lDrawable, null, rDrawable, null);
             }
 
-            
+
         }
 
 

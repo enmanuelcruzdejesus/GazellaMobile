@@ -3130,7 +3130,7 @@ containing a value of this type.
         public static int notify_panel_notification_icon_bg=0x7f020110;
         public static int queryicon=0x7f020111;
         public static int reports2img=0x7f020112;
-        public static int reportsimg=0x7f020113;
+        public static int reportsicon=0x7f020113;
         public static int roundedbg=0x7f020114;
         public static int roundedbgdark=0x7f020115;
         public static int searchicon=0x7f020116;

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GazellaMobile.Views.AuthorizationDetails" Title="Detalle" 
+             Padding="0,20,0,0">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label Text="Número autorización" Style="{StaticResource titleLabel2Style}"/>
+                <Entry x:Name="authIdEntry" IsEnabled="False" Text="{Binding AuthId}" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Compañia" Style="{StaticResource titleLabel2Style}"/>
+                <Entry x:Name="companyNameEntry" IsEnabled="False"  Text="{Binding CompanyName}" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Tipo autorización" Style="{StaticResource titleLabel2Style}"/>
+                <Entry x:Name="descriptionEntry" IsEnabled="False" Text="{Binding Description}" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Detalle" Style="{StaticResource titleLabel2Style}"/>
+                <Editor x:Name="detailsEditor" IsEnabled="False" Text="{Binding AuthDetail1}" BackgroundColor="WhiteSmoke" HeightRequest="100" />
+
+                <Label Text="Monto" Style="{StaticResource titleLabel2Style}"/>
+                <Entry x:Name="authdetail2Entry" IsEnabled="False" Text="{Binding AuthDetail2 , StringFormat='${0}'}"  Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Comentarios de usuario:" Style="{StaticResource titleLabel2Style}"/>
+                <Editor x:Name="usercommentsEditor" IsEnabled="False" Text="{Binding Comments}" BackgroundColor="WhiteSmoke" HeightRequest="100" />
+
+
+                <Label Text="Fecha solicitud" Style="{StaticResource titleLabel2Style}" />
+                <Entry x:Name="requestDateEntry" IsEnabled="False" Text="{Binding RequestDate}" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Solicitada por" Style="{StaticResource titleLabel2Style}" />
+                <Entry x:Name="requestByEntry" IsEnabled="False"  Text="{Binding RequestBy}" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Comentarios" Style="{StaticResource titleLabel2Style}"/>
+                <Editor x:Name="commentsEditor"  Text="{Binding ApprovalComments}" BackgroundColor="WhiteSmoke" HeightRequest="100" />
+
+
+                <Button x:Name="btnAccept" Text="Autorizar" Style="{StaticResource buttonStyle}" Command="{Binding AcceptCommand}"/>
+                <Button x:Name="btnCancel" Text="Rechazar" TextColor="{StaticResource textColor}" BackgroundColor="Red" Command="{Binding CancelCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

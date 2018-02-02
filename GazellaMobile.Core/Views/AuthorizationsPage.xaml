@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GazellaMobile.Views.AuthorizationPage"
+             Title="Autorizaciones">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="authorizationListView" RowHeight="135" ItemTapped="authorizationListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem x:Name="acceptMenuItem" Text="Autorizar" CommandParameter="{Binding .}" Clicked="OnAccept"/>
+                                <MenuItem x:Name="cancelMenuItem" Text="Rechazar" CommandParameter="{Binding .}" Clicked="OnCancel" IsDestructive="True"/>
+                            </ViewCell.ContextActions>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="70"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Description}" Style="{StaticResource titleLabelStyle}" />
+                                <Label Grid.Row="0" Grid.Column="1" XAlign="End" TextColor="#89c27d" HorizontalOptions="FillAndExpand" Text="{Binding AuthDetail2, StringFormat = '${0}'}" Style="{StaticResource detailLabelSytle}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding AuthDetail1}" Style="{StaticResource detailLabelSytle}"/>
+                                <Label Grid.Row="2" Grid.Column="0" Text="{Binding Comments}"  Style="{StaticResource detailLabelSytle}"/>
+                                <Label Grid.Row="3" Grid.Column="0" Text="{Binding MoreDetail}" Style="{StaticResource detailLabelSytle}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

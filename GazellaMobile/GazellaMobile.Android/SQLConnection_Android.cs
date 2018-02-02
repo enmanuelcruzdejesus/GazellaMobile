@@ -14,10 +14,10 @@ using Xamarin.Forms;
 using GazellaMobile.Droid;
 using GazellaMobile.Interfaces;
 
-[assembly:Dependency(typeof(SQLConnection_Android))]
+[assembly: Dependency(typeof(SQLConnection_Android))]
 namespace GazellaMobile.Droid
 {
-     public class SQLConnection_Android : ISQLConnection
+    public class SQLConnection_Android : ISQLConnection
     {
         public SQLiteConnection GetConnection()
         {

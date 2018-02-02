@@ -181,6 +181,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonEditText.cs" />
+    <Compile Include="ButtonEntryRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,6 +205,7 @@
     <AndroidResource Include="Resources\drawable\authorizationiconblack.png" />
     <AndroidResource Include="Resources\drawable\settingsiconblack.png" />
     <AndroidResource Include="Resources\drawable\searchicon.png" />
+    <AndroidResource Include="Resources\drawable\reportsicon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GazellaMobile\GazellaMobile.csproj">
@@ -230,9 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\reportsimg.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\reports2img.png" />

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GazellaMobile.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout x:Name="MasterStack" Padding="0,100,0,0" Spacing="10">
+                <StackLayout x:Name="LogoStack">
+                    <Image x:Name="LogoImg" Source="gazellaicon.png" Aspect="AspectFit" />
+                </StackLayout>
+                <StackLayout VerticalOptions="FillAndExpand" Spacing="5">
+                    <Entry x:Name="userNameEntry" Placeholder="Usuario" Text="{Binding UserId}" Style="{StaticResource entryStyle}"/>
+                    <Entry x:Name="passwordEntry" Placeholder="Contraseña" Text="{Binding Password}" IsPassword="True" Style="{StaticResource entryStyle}"/>
+                    <Button x:Name="btnSignIn" Text="Iniciar Sesion" Command="{Binding SignInCommand}" Style="{StaticResource buttonStyle}"/>
+                    <Label  x:Name="lblFortPasword" Text="Olvidaste la contraseña?" XAlign="Center" TextColor="Blue" Style="{StaticResource labelStyle} "/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
