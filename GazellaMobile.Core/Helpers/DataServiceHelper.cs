@@ -11,17 +11,18 @@ using GazellaMobile.Utils.Services;
 
 namespace GazellaMobile.Helpers
 {
-    public class DataServiceHelper : IDisposable
+    public class DataServiceHelper 
     {
-        GDSServiceClient _service = null;
-        public string Uri { get; }
-        public DataServiceHelper(string uri)
+        IHttpClient _service;
+
+        public DataServiceHelper(IHttpClient client)
         {
-            _service = new GDSServiceClient(uri);
+            _service = client;
         }
+
         public async Task<dynamic[]> GetAuthorizations()
         {
-            var response = await _service.GetResponse("Authorizations", App.CurrentUser.UserId);
+            var response = await _service.GetByIdAsync("Authorizations", App.CurrentUser.UserId);
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 var content = await response.Content.ReadAsStringAsync();
@@ -163,7 +164,7 @@ namespace GazellaMobile.Helpers
 
         public async Task<Dictionary<string, List<object>>> ExecProcedureData(ProcedureParams p)
         {
-            var response = await _service.Post<ProcedureParams>("GDSApi", p);
+            var response = await _service.PostAsync<ProcedureParams>("GDSApi", p);
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
@@ -186,7 +187,7 @@ namespace GazellaMobile.Helpers
         }
         public async Task<string> AuthConfirmationResponse(AuthConfirmation authConfirmation)
         {
-            var response = await _service.Post<AuthConfirmation>("Authorizations", authConfirmation);
+            var response = await _service.PostAsync<AuthConfirmation>("Authorizations", authConfirmation);
 
             if (response.IsSuccessStatusCode)
             {
@@ -207,10 +208,6 @@ namespace GazellaMobile.Helpers
             return null;
 
         }
-        public void Dispose()
-        {
-            _service.Dispose();
-
-        }
+       
     }
 }

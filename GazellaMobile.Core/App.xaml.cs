@@ -15,6 +15,8 @@ using GazellaMobile.Helpers;
 using GazellaMobile.Views;
 using GazellaMobile.Interfaces;
 using GazellaMobile.Utils.Services;
+using Plugin.Connectivity;
+using System.Diagnostics;
 
 namespace GazellaMobile
 {
@@ -71,7 +73,7 @@ namespace GazellaMobile
             {
                 if (_serviceClient == null)
                 {
-                    _serviceClient = new DataServiceHelper(Uri);
+                    _serviceClient = new DataServiceHelper(new ResilienceHttpClient(Uri));
                     return _serviceClient;
                 }
                 return _serviceClient;
@@ -214,9 +216,33 @@ namespace GazellaMobile
             InitializeComponent();
             PresentLoginPage();
 
+            CrossConnectivity.Current.ConnectivityTypeChanged += (sender, args) =>
+            {
+                Debug.WriteLine($"Connectivity changed to {args.IsConnected} ");
+                foreach (var t in args.ConnectionTypes)
+                    Debug.WriteLine($"Connection Type {t} ");
+
+                
+                if (!args.IsConnected)
+                {
+
+                    if (this.MainPage.Navigation.ModalStack.Count() == 0)
+                        this.MainPage.Navigation.PushModalAsync(new WhenThereIsNoConnectionPage());
+
+                }
+                else
+                {
+                    this.MainPage.Navigation.PopModalAsync();
+
+
+                }
+
+            };
+
+
         }
         #endregion
- 
+
         private static void InitializingParams()
         {
             var db = DependencyService.Get<ISQLConnection>().GetConnection();

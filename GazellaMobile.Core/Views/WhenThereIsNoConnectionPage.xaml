@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GazellaMobile.Views.WhenThereIsNoConnectionPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Image  Source="reloadicon.png" Aspect="AspectFit"/>
+            <Label   Text="You are not connected to the internet. :("/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

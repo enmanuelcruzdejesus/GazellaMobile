@@ -37,7 +37,7 @@ namespace GazellaMobile.Views.Helpers
                 SearchListDialog obj = (SearchListDialog)s;
                 dynamic item = (dynamic)args.Item;
 
-                obj.Result = Convert.ToString(item.Title);
+                obj.Result = item.Title.ToString();
 
                 ///Updating the page completion source
                 popup.PageClosedComplitionSource.SetResult(obj.Result);
@@ -58,7 +58,6 @@ namespace GazellaMobile.Views.Helpers
             //Initializing the control with the result
             entry.CustomText = result;
 
-            entry.Focus();
 
 
         }
