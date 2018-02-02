@@ -52,7 +52,7 @@ namespace GazellaMobile.Views
                   result.Text
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
-            UserDialogs.Instance.ShowSuccess(responseMessage);
+            UserDialogs.Instance.Alert(responseMessage);
 
             //Updating 
             this.authorizationListView.ItemsSource = await vm.Data;
@@ -71,7 +71,7 @@ namespace GazellaMobile.Views
                   result.Text
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
-            UserDialogs.Instance.ShowSuccess(responseMessage);
+            UserDialogs.Instance.Alert(responseMessage);
 
             //Updating 
             this.authorizationListView.ItemsSource = await vm.Data;

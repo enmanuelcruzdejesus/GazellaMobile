@@ -107,9 +107,7 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "GazellaMobile.Android.dll" comes first in this list. */
 		"GazellaMobile.Android.dll",
-		"Acr.Support.Android.dll",
 		"Acr.UserDialogs.dll",
-		"Acr.UserDialogs.Interface.dll",
 		"AndHUD.dll",
 		"FormsViewGroup.dll",
 		"GazellaMobile.dll",

@@ -1,12 +1,11 @@
-Acr.Support.Android
 Acr.UserDialogs
-Acr.UserDialogs.Interface
 AndHUD
 FormsViewGroup
 GazellaMobile
 Newtonsoft.Json
 Plugin.Connectivity.Abstractions
 Plugin.Connectivity
+Polly
 Rg.Plugins.Popup
 Rg.Plugins.Popup.Droid
 Splat
@@ -16,10 +15,12 @@ SQLitePCLRaw.batteries_v2
 SQLitePCLRaw.core
 SQLitePCLRaw.lib.e_sqlite3
 SQLitePCLRaw.provider.e_sqlite3
+System.Collections
 System.Net.Http.Extensions
 System.Net.Http.Primitives
 System.ObjectModel
 System.Runtime
+System.Threading.Tasks
 Xamarin.Android.Support.Animated.Vector.Drawable
 Xamarin.Android.Support.Annotations
 Xamarin.Android.Support.Compat
@@ -41,4 +42,3 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
-Polly

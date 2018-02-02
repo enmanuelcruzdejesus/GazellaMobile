@@ -1,7 +1,5 @@
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\GazellaMobile.Android.dll
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\Acr.Support.Android.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\Acr.UserDialogs.dll
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\Acr.UserDialogs.Interface.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\AndHUD.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\FormsViewGroup.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\GazellaMobile.dll
@@ -22,14 +20,18 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\ob
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\SQLitePCLRaw.core.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\SQLitePCLRaw.lib.e_sqlite3.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Collections.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Core.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.dll
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.IdentityModel.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.IO.Compression.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Net.Http.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Net.Http.Extensions.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Net.Http.Primitives.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.ObjectModel.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Runtime.dll
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Runtime.Serialization.dll
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Threading.Tasks.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Xml.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Xml.Linq.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\Xamarin.Android.Support.Animated.Vector.Drawable.dll
@@ -52,9 +54,6 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\ob
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Threading.Tasks.dll
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Diagnostics.Debug.dll
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Collections.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\netstandard.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Data.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Numerics.dll
@@ -66,8 +65,6 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\ob
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.IO.Compression.FileSystem.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.ComponentModel.Composition.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Runtime.Serialization.dll
-C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.ServiceModel.Internals.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Runtime.Serialization.Xml.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Security.Cryptography.Algorithms.dll
@@ -79,6 +76,7 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\ob
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Reflection.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Threading.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Collections.Concurrent.dll
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Diagnostics.Debug.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Linq.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Runtime.InteropServices.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Runtime.Extensions.dll
@@ -98,3 +96,4 @@ C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\ob
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Reflection.Primitives.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Text.Encoding.Extensions.dll
 C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.Net.Primitives.dll
+C:\Users\ecruz\Source\Repos\GazellaMobile\GazellaMobile\GazellaMobile.Android\obj\Debug\android\assets\System.ServiceModel.Internals.dll

@@ -147,7 +147,7 @@ namespace GazellaMobile.ViewModels
                 );
 
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
-            UserDialogs.Instance.ShowSuccess(responseMessage);
+            UserDialogs.Instance.Alert(responseMessage);
             await Task.Delay(2000);         
             TabbedPage page = (TabbedPage)App.Current.MainPage;         
             await page.Children[1].Navigation.PopAsync();
@@ -165,7 +165,7 @@ namespace GazellaMobile.ViewModels
                   ApprovalComments
                 );
             var responseMessage = await App.ServiceClient.AuthConfirmationResponse(auth);
-            UserDialogs.Instance.ShowSuccess(responseMessage);
+            UserDialogs.Instance.Alert(responseMessage);
             await Task.Delay(2000);
             TabbedPage page = (TabbedPage)App.Current.MainPage;          
             await page.Children[1].Navigation.PopAsync();

@@ -73,7 +73,7 @@ namespace GazellaMobile.ViewModels
                 if (!logStatus.IsValid)
                 {                    
                     UserDialogs.Instance.HideLoading();             
-                    UserDialogs.Instance.ShowError(logStatus.Message,3000);                    
+                    UserDialogs.Instance.Alert(logStatus.Message);                    
                     return;
                 }               
                 await Task.Delay(2000);
@@ -83,7 +83,7 @@ namespace GazellaMobile.ViewModels
             }
             else
             {                
-                UserDialogs.Instance.ShowError("Connection Error");
+                UserDialogs.Instance.Alert("Connection Error");
 
             }
         }
