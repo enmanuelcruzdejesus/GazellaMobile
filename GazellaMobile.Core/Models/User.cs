@@ -27,7 +27,6 @@ namespace GazellaMobile.Models
 
         public DateTime LastUpdate { get; set; }
 
-        public bool KeepLog { get; set; }
 
         public User()
         {
