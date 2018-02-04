@@ -106,6 +106,10 @@
     <Compile Include="ButtonEntryRenderer.cs" />
     <BundleResource Include="Resources\searchicon.png" />
     <BundleResource Include="Resources\reportsicon.png" />
+    <Compile Include="SaveAndLoad.cs" />
+    <BundleResource Include="Resources\usericon1.png" />
+    <BundleResource Include="Resources\usericon2.png" />
+    <BundleResource Include="Resources\usericon3.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -198,6 +202,12 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Xamarin.SimplePing.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.SimplePing.1.4.0\lib\XamariniOS10\Xamarin.SimplePing.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ImageCircle.2.0.2\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.iOS">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ImageCircle.2.0.2\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

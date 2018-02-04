@@ -143,6 +143,7 @@ namespace GazellaMobile.Views
                 await DisplayAlert("Preview", _listOfControls.Count.ToString(), "OK");
             };
 
+            btnPreview.Margin = new Thickness(0, 20, 0, 0);
             mainStackLayout.Children.Add(btnPreview);
 
             this.Content = new ScrollView()

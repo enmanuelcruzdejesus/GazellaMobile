@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using GazellaMobile.Views;
+using Newtonsoft.Json;
+using GazellaMobile.Interfaces;
+
 namespace GazellaMobile.ViewModels
 {
     public class SettingsPageViewModel
@@ -16,6 +19,14 @@ namespace GazellaMobile.ViewModels
         private ICommand _saveCommand;      
         private AppSettings _settings;
 
+
+        public string UserId
+        {
+            get
+            {
+                return App.CurrentUser.UserId;
+            }
+        }
 
         public ICommand LogOutCommand
         {
@@ -47,7 +58,7 @@ namespace GazellaMobile.ViewModels
       
         public SettingsPageViewModel()
         {           
-           _settings = App.DbConnection.Table<AppSettings>().First();          
+           _settings = App.DbConnection.Table<AppSettings>().First();
         }
 
 
@@ -61,8 +72,17 @@ namespace GazellaMobile.ViewModels
             //Saving some data            
             UserDialogs.Instance.ShowLoading("Guardando", MaskType.Black);
             App.DbConnection.Update(_settings);
+            App.Settings = _settings;
             await Task.Delay(2000);
             UserDialogs.Instance.HideLoading();
+
+            //Saving the current user
+            if(Settings.AllowKeepLog)
+            {
+                var json = JsonConvert.SerializeObject(App.CurrentUser);
+                DependencyService.Get<ISaveAndLoad>().SaveText("temp.txt", json);
+            }
+
             //if the server section has changed
             //then loging out will be required
             if (App.Settings.Server != this.Settings.Server)

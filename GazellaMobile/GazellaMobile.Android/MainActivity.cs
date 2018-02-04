@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Acr.UserDialogs;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace GazellaMobile.Droid
 {
@@ -21,6 +22,7 @@ namespace GazellaMobile.Droid
             base.OnCreate(bundle);
             Rg.Plugins.Popup.Popup.Init(this, bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
             UserDialogs.Init(this);
         }

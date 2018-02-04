@@ -5,6 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using Acr.UserDialogs;
+using ImageCircle.Forms.Plugin.iOS;
 
 namespace GazellaMobile.iOS
 {
@@ -25,6 +26,7 @@ namespace GazellaMobile.iOS
         {
             Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }

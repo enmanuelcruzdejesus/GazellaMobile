@@ -4,19 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 using Acr.UserDialogs;
 using Newtonsoft.Json;
 using SQLite;
+using Plugin.Connectivity;
 
 using GazellaMobile.Models;
 using GazellaMobile.Helpers;
 using GazellaMobile.Views;
 using GazellaMobile.Interfaces;
 using GazellaMobile.Utils.Services;
-using Plugin.Connectivity;
-using System.Diagnostics;
+
+
 
 namespace GazellaMobile
 {
@@ -27,7 +29,6 @@ namespace GazellaMobile
         static string BASE_URL = "gazellamobileapi/api/{0}/{1}";
         static string _uri;
         static bool _isLogin = false;
-        static bool _allowKeepLog = false;
         static DataServiceHelper _serviceClient = null;
         static GDSServiceClient _serviceClient2 = null;
         static User _currentUser = null;     
@@ -58,15 +59,7 @@ namespace GazellaMobile
                 return _isLogin;
             }
         }
-        public static bool AllowKeepLog
-        {
-            get { return _allowKeepLog; }
-            set
-            {
-                if (value != _allowKeepLog)
-                    _allowKeepLog = value;
-            }
-        }
+     
         public static DataServiceHelper ServiceClient
         {
             get
@@ -176,8 +169,11 @@ namespace GazellaMobile
         }
         public static void PresentLoginPage()
         {
-            if (_allowKeepLog)
+            if (_settings.AllowKeepLog)
             {
+                //Load User
+                var jsonString = DependencyService.Get<ISaveAndLoad>().LoadText("temp.txt");
+                _currentUser = JsonConvert.DeserializeObject<User>(jsonString);
                 _isLogin = true;
                 PresentMainPage();
                 return;
@@ -192,11 +188,15 @@ namespace GazellaMobile
             _serviceClient2 = null;
             _currentUser = null;
             _isLogin = false;
-            _allowKeepLog = false;
             // Saving some data
-            await Task.Delay(2000);
-            //Re-initializing params
+            if(App.Settings.AllowKeepLog)
+            {
+                _settings.AllowKeepLog = false;
+                DbConnection.Update(_settings);
+            }
+
             InitializingParams();
+            await Task.Delay(2000);
             UserDialogs.Instance.HideLoading();
             PresentLoginPage();
 
@@ -249,7 +249,6 @@ namespace GazellaMobile
             _settings = db.Table<AppSettings>().FirstOrDefault();
             SERVER_NAME = string.Format(SERVER_NAME, _settings.Server).Trim();          
             _uri = SERVER_NAME + BASE_URL;            
-            _allowKeepLog = _settings.AllowKeepLog;
             db.Dispose();
         }
         protected override void OnStart()
