@@ -185,6 +185,7 @@ namespace GazellaMobile.Helpers
             return null;
 
         }
+
         public async Task<string> AuthConfirmationResponse(AuthConfirmation authConfirmation)
         {
             var response = await _service.PostAsync<AuthConfirmation>("Authorizations", authConfirmation);

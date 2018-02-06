@@ -59,6 +59,15 @@ namespace GazellaMobile
                 return _isLogin;
             }
         }
+
+        public static bool IsServerConfigured
+        {
+            get
+            {
+               return DbConnection.Table<AppSettings>().Count()>0;
+               
+            }
+        }
      
         public static DataServiceHelper ServiceClient
         {
@@ -98,7 +107,15 @@ namespace GazellaMobile
         }
         public static AppSettings Settings
         {
-            get { return _settings; }
+            get 
+            {
+                if(_settings == null)
+                {
+                    _settings = new AppSettings();
+                    return _settings;
+                }
+                return _settings;
+            }
             set
             {
                 _settings = value;
@@ -169,15 +186,20 @@ namespace GazellaMobile
         }
         public static void PresentLoginPage()
         {
-            if (_settings.AllowKeepLog)
+            if(IsServerConfigured)
             {
-                //Load User
-                var jsonString = DependencyService.Get<ISaveAndLoad>().LoadText("temp.txt");
-                _currentUser = JsonConvert.DeserializeObject<User>(jsonString);
-                _isLogin = true;
-                PresentMainPage();
-                return;
+                if (_settings.AllowKeepLog)
+                {
+                    //Load User
+                    var jsonString = DependencyService.Get<ISaveAndLoad>().LoadText("temp.txt");
+                    _currentUser = JsonConvert.DeserializeObject<User>(jsonString);
+                    _isLogin = true;
+                    PresentMainPage();
+                    return;
+                }
+                
             }
+                
 
             Current.MainPage = new LoginPage();
         }
@@ -245,11 +267,15 @@ namespace GazellaMobile
 
         private static void InitializingParams()
         {
-            var db = DependencyService.Get<ISQLConnection>().GetConnection();
-            _settings = db.Table<AppSettings>().FirstOrDefault();
-            SERVER_NAME = string.Format(SERVER_NAME, _settings.Server).Trim();          
-            _uri = SERVER_NAME + BASE_URL;            
-            db.Dispose();
+            if(IsServerConfigured)
+            {
+                var db = DependencyService.Get<ISQLConnection>().GetConnection();
+                _settings = db.Table<AppSettings>().FirstOrDefault();
+                SERVER_NAME = string.Format(SERVER_NAME, _settings.Server).Trim();
+                _uri = SERVER_NAME + BASE_URL;
+                db.Dispose();
+            }
+          
         }
         protected override void OnStart()
         {

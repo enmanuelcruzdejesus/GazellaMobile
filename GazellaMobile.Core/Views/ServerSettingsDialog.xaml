@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GazellaMobile.Views.ServerSettingsDialog">
+	<ContentView.Content>
+    
+         <StackLayout HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White"
+               WidthRequest="250" Padding="5,0,5,5"  >
+
+            <Label Text="Registro" FontSize="20" FontAttributes="Bold" Margin="0,0,0,15" BackgroundColor="Transparent"/>
+            <Label Text="Server" Style="{StaticResource titleLabel2Style}"/>
+            <Entry x:Name ="serverEntry" Text="{Binding Server}"/>  
+            
+            <Label Text="User" Style="{StaticResource titleLabel2Style}"/>
+            <Entry x:Name ="userEntry" Text="{Binding UserId}"/> 
+            
+             <Label Text="Password" Style="{StaticResource titleLabel2Style}"/>
+            <Entry x:Name ="passwordEntry" IsPassword="true" Text="{Binding Password}"/>   
+            
+            <Button x:Name="btnTestConnection" Margin="0,20,0,0"  Style="{StaticResource buttonStyle}" Text="Test Connection" Clicked="Handle_Clicked" />
+        </StackLayout>
+	</ContentView.Content>
+</ContentView>

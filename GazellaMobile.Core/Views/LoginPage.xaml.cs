@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using GazellaMobile.ViewModels;
+using Rg.Plugins.Popup.Services;
+using GazellaMobile.Views.CustomControls;
+using Polly;
 
 namespace GazellaMobile.Views
 {
@@ -21,7 +24,7 @@ namespace GazellaMobile.Views
             this.BindingContext = vm;
 
         }
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             this.userNameEntry.Focus();

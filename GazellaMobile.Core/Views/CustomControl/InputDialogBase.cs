@@ -19,7 +19,7 @@ namespace GazellaMobile.Views.CustomControls
         public InputDialogBase(View contentBody)
         {
             Content = contentBody;
-            //this.BackgroundColor = new Color(0, 0, 0, 0.4);
+            this.BackgroundColor = new Color(0, 0, 0, 0.4);
             this.PageClosedComplitionSource = new TaskCompletionSource<T>();
 
         }

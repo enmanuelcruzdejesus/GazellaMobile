@@ -102,7 +102,6 @@
     <BundleResource Include="Resources\gazellaicon.png" />
     <BundleResource Include="Resources\authorizationiconblack.png" />
     <BundleResource Include="Resources\settingsiconblack.png" />
-    <BundleResource Include="Resources\GazellaMobile.db3" />
     <Compile Include="ButtonEntryRenderer.cs" />
     <BundleResource Include="Resources\searchicon.png" />
     <BundleResource Include="Resources\reportsicon.png" />
@@ -110,6 +109,7 @@
     <BundleResource Include="Resources\usericon1.png" />
     <BundleResource Include="Resources\usericon2.png" />
     <BundleResource Include="Resources\usericon3.png" />
+    <BundleResource Include="Resources\GazellaMobile.db3" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
