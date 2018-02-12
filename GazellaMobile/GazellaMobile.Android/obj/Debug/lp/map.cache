@@ -2,6 +2,8 @@ Acr.UserDialogs
 AndHUD
 FormsViewGroup
 GazellaMobile
+ImageCircle.Forms.Plugin.Abstractions
+ImageCircle.Forms.Plugin.Android
 Newtonsoft.Json
 Plugin.Connectivity.Abstractions
 Plugin.Connectivity
@@ -21,6 +23,9 @@ System.Net.Http.Primitives
 System.ObjectModel
 System.Runtime
 System.Threading.Tasks
+Xamarin.Android.Arch.Core.Common
+Xamarin.Android.Arch.Lifecycle.Common
+Xamarin.Android.Arch.Lifecycle.Runtime
 Xamarin.Android.Support.Animated.Vector.Drawable
 Xamarin.Android.Support.Annotations
 Xamarin.Android.Support.Compat
@@ -42,8 +47,3 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
-ImageCircle.Forms.Plugin.Abstractions
-ImageCircle.Forms.Plugin.Android
-Xamarin.Android.Arch.Core.Common
-Xamarin.Android.Arch.Lifecycle.Common
-Xamarin.Android.Arch.Lifecycle.Runtime

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GazellaMobile.Views.AuthorizationPage"
@@ -26,7 +26,7 @@
                                     <ColumnDefinition Width="70"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding Description}" Style="{StaticResource titleLabelStyle}" />
-                                <Label Grid.Row="0" Grid.Column="1" XAlign="End" TextColor="#89c27d" HorizontalOptions="FillAndExpand" Text="{Binding AuthDetail2, StringFormat = '${0}'}" Style="{StaticResource detailLabelSytle}"/>
+                                <Label Grid.Row="0" Grid.Column="1" XAlign="End" FontAttributes="Bold,Italic" HorizontalOptions="FillAndExpand" Text="{Binding AuthDetail2, StringFormat = '${0}'}" Style="{StaticResource detailLabelSytle}"/>
                                 <Label Grid.Row="1" Grid.Column="0" Text="{Binding AuthDetail1}" Style="{StaticResource detailLabelSytle}"/>
                                 <Label Grid.Row="2" Grid.Column="0" Text="{Binding Comments}"  Style="{StaticResource detailLabelSytle}"/>
                                 <Label Grid.Row="3" Grid.Column="0" Text="{Binding MoreDetail}" Style="{StaticResource detailLabelSytle}"/>

@@ -17,5 +17,10 @@ namespace GazellaMobile.Views
             InitializeComponent();
 
         }
+
+        void Handle_PagesChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           
+        }
     }
 }

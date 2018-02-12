@@ -14,9 +14,14 @@
             <Color x:Key="textColor">
                White
             </Color>
+
+            <!-- Navigation Style -->
+            <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#5d90c3"/>
+            <Setter Property="BarTextColor" Value="White"/>
+            </Style>
             
-  
-            <!--Default ButtonStyle-->
+           <!--Default ButtonStyle-->
             <Style x:Key="buttonStyle" TargetType="Button">
               <Setter Property="TextColor" Value="{StaticResource textColor}"/>
               <Setter Property="FontSize" Value="Medium"/>

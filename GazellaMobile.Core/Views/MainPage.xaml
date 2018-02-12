@@ -1,26 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:GazellaMobile.Views"
-             x:Class="GazellaMobile.Views.MainPage">
+             x:Class="GazellaMobile.Views.MainPage" BarTextColor="#5d90c3" PagesChanged="Handle_PagesChanged" >
     <!--Pages can be added as references or inline-->
 
 
-
-    <NavigationPage  Icon="reportsicon.png" Tint="{StaticResource bgColor}">
+    <NavigationPage  Icon="reportsicon.png">
         <x:Arguments>
             <local:ReportsPage/>
         </x:Arguments>
     </NavigationPage>
 
 
-    <NavigationPage Icon="authorizationiconblack.png" Tint="{StaticResource bgColor}">
+    <NavigationPage Icon="authorizationiconblack.png" >
         <x:Arguments>
             <local:AuthorizationPage/>
         </x:Arguments>
     </NavigationPage>
 
-    <NavigationPage  Icon="settingsiconblack.png" Tint="{StaticResource bgColor}">
+    <NavigationPage  Icon="settingsiconblack.png">
         <x:Arguments>
             <local:SettingsPage/>
         </x:Arguments>
