@@ -8,6 +8,8 @@ namespace GazellaMobile.Utils.Services
 {
     public interface IHttpClient
     {
+        Task<HttpResponseMessage> GetAsync(Uri uri);
+ 
         Task<HttpResponseMessage> GetAsync(string controller, string authorizationToken = null, string authorizationMethod = "Bearer");
 
         Task<HttpResponseMessage> GetByIdAsync(string controller, string id, string authorizationToken = null, string authorizationMethod = "Bearer");

@@ -38,6 +38,21 @@ namespace GazellaMobile.Utils.Services
 
         }
 
+
+        public Task<HttpResponseMessage> GetAsync(Uri uri)
+        {
+            return _policy.ExecuteAsync(async () =>
+            {
+                var response = await _client.GetAsync(uri);
+                return response;
+            });
+
+
+        }
+
+     
+
+
         public Task<HttpResponseMessage> GetAsync(string controller, string authorizationToken = null, string authorizationMethod = "Bearer")
         {
             return _policy.ExecuteAsync(async () =>

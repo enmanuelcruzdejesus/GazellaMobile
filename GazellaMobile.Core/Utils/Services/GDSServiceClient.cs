@@ -21,6 +21,17 @@ namespace GazellaMobile.Utils.Services
 
         }
 
+
+
+
+        public async Task<HttpResponseMessage> GetResponse(Uri uri)
+        {
+           
+            var response = await _client.GetAsync(uri);
+            return response;
+        }
+
+
         public async Task<HttpResponseMessage> GetResponse(string controller)
         {
             var uri = new Uri(String.Format(Url, controller, string.Empty));
@@ -29,12 +40,16 @@ namespace GazellaMobile.Utils.Services
         }
 
 
+ 
+
         public async Task<HttpResponseMessage> GetResponse(string controller, string id)
         {
             var uri = new Uri(String.Format(Url, controller, id));
             var response = await _client.GetAsync(uri);
             return response;
         }
+
+
 
         public async Task<HttpResponseMessage> Post<T>(string controller, T id)
         {
@@ -54,6 +69,8 @@ namespace GazellaMobile.Utils.Services
             var response = await _client.PutAsync(uri, content);
             return response;
         }
+
+
 
         public void Dispose()
         {
