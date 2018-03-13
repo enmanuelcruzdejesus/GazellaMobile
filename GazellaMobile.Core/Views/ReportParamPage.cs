@@ -49,99 +49,7 @@ namespace GazellaMobile.Views
 
             }
             Button btnPreview = new Button() { Text = "Vista Previa", Style = (Style)App.Current.Resources["buttonStyle"] };
-            btnPreview.Clicked += async (s, e) =>
-            {
-                //Getting data from parameters
-                string data = App.Cia.ToString() + ',';
-                var novisualParameters = _parameters.Where(p => p.Visible.ToString() == "N");
-                for (int i = 0; i < _listOfControls.Count; i++)
-                {
-
-                    if (_listOfControls[i] is ButtonEntry)
-                    {
-                        ButtonEntry entry = (ButtonEntry)_listOfControls[i];
-                        var param = (dynamic)entry.BindingContext;
-                        var iniLine = Convert.ToInt32(param.IniLine);
-                        if (iniLine > 0)
-                        {
-                            if (string.IsNullOrEmpty(entry.Text))
-                            {
-                                string value1 = " ";
-                                if (param.DataType.ToString() == "N")
-                                    value1 = "0";
-
-                                var value2 = novisualParameters.Single(p => p.Sequence == iniLine).DefaultValue.ToString();
-                                data += value1 + ',' + value2;
-                            }
-                            else
-                            {
-                                var value1 = entry.CustomText;
-                                var value2 = entry.CustomText;
-                                data += value1 + ',' + value2;
-                            }
-
-                        }
-                        else
-                        {
-                            data += entry.Text;
-                        }
-                    }
-                    else if (_listOfControls[i] is Entry)
-                    {
-
-                        Entry entry = (Entry)_listOfControls[i];
-                        var param = (dynamic)entry.BindingContext;
-                        var iniLine = Convert.ToInt32(param.IniLine);
-                        if (iniLine > 0)
-                        {
-                            if (string.IsNullOrEmpty(entry.Text))
-                            {
-                                string value1 = " ";
-                                if (param.DataType.ToString() == "N")
-                                    value1 = "0";
-
-                                var value2 = novisualParameters.Single(p => p.Sequence == iniLine).DefaultValue.ToString();
-                                data += value1 + ',' + value2;
-                            }
-                            else
-                            {
-                                var value1 = entry.Text;
-                                var value2 = entry.Text;
-                                data += value1 + ',' + value2;
-                            }
-
-                        }
-                        else
-                        {
-                            data += entry.Text;
-                        }
-
-                    }
-                    else if (_listOfControls[i] is DatePicker)
-                    {
-                        DatePicker date = (DatePicker)_listOfControls[i];
-                        data += date.Date.ToString();
-                    }
-                    else if (_listOfControls[i] is Picker)
-                    {
-                        Picker pick = (Picker)_listOfControls[i];
-                        data += pick.SelectedItem.ToString();
-                    }
-                    else if (_listOfControls[i] is Switch)
-                    {
-                        Switch sw = (Switch)_listOfControls[i];
-                        data += sw.IsToggled.ToString();
-                    }
-
-                    //adding comma if we didn't reach the end of the array
-                    if (!(i == _listOfControls.Count - 1))
-                    {
-                        data += ',';
-                    }
-                }
-
-                await DisplayAlert("Preview", _listOfControls.Count.ToString(), "OK");
-            };
+            btnPreview.Clicked += btnPreviewClickHandler;
 
             btnPreview.Margin = new Thickness(0, 20, 0, 0);
             mainStackLayout.Children.Add(btnPreview);
@@ -155,6 +63,105 @@ namespace GazellaMobile.Views
 
         }
 
+
+        async void btnPreviewClickHandler(object sender, EventArgs e)
+        {
+            List<string> paramValues = new List<string>();
+            paramValues.Add(App.Cia.ToString());
+            var novisualParameters = _parameters.Where(p => p.Visible.ToString() == "N");
+            for (int i = 0; i < _listOfControls.Count; i++)
+            {
+
+                if (_listOfControls[i] is ButtonEntry)
+                {
+                    ButtonEntry entry = (ButtonEntry)_listOfControls[i];
+                    var param = (dynamic)entry.BindingContext;
+                    var iniLine = Convert.ToInt32(param.IniLine);
+                    if (iniLine > 0)
+                    {
+                        if (string.IsNullOrEmpty(entry.Text))
+                        {
+                            string value1 = " ";
+                            if (param.DataType.ToString() == "N")
+                                value1 = "0";
+
+                            var value2 = novisualParameters.Single(p => p.Sequence == iniLine).DefaultValue.ToString();
+                            paramValues.Add(value1);
+                            paramValues.Add(value2);
+                        }
+                        else
+                        {
+                            var value1 = entry.CustomText;
+                            var value2 = entry.CustomText;
+                            paramValues.Add(value1);
+                            paramValues.Add(value2);
+                        }
+
+                    }
+                    else
+                    {
+                        
+                        paramValues.Add(entry.Text);
+
+                    }
+                }
+                else if (_listOfControls[i] is Entry)
+                {
+
+                    Entry entry = (Entry)_listOfControls[i];
+                    var param = (dynamic)entry.BindingContext;
+                    var iniLine = Convert.ToInt32(param.IniLine);
+                    if (iniLine > 0)
+                    {
+                        if (string.IsNullOrEmpty(entry.Text))
+                        {
+                            string value1 = " ";
+                            if (param.DataType.ToString() == "N")
+                                value1 = "0";
+
+                            var value2 = novisualParameters.Single(p => p.Sequence == iniLine).DefaultValue.ToString();
+                            paramValues.Add(value1);
+                            paramValues.Add(value2);
+                        }
+                        else
+                        {
+                            var value1 = entry.Text;
+                            var value2 = entry.Text;
+                            paramValues.Add(value1);
+                            paramValues.Add(value2);
+                        }
+
+                    }
+                    else
+                    {
+                        paramValues.Add(entry.Text);
+                      
+                    }
+
+                }
+                else if (_listOfControls[i] is DatePicker)
+                {
+                    DatePicker date = (DatePicker)_listOfControls[i];
+                    paramValues.Add(date.Date.ToString("yyyy/MM/dd/HH:mm:ss"));
+                
+                }
+                else if (_listOfControls[i] is Picker)
+                {
+                    Picker pick = (Picker)_listOfControls[i];
+                    var key = pick.SelectedItem.ToString().Split('.');
+                    paramValues.Add(key[0]);
+                }
+                else if (_listOfControls[i] is Switch)
+                {
+                    Switch sw = (Switch)_listOfControls[i];
+                    paramValues.Add(sw.IsToggled.ToString());
+                }
+
+            }
+
+            var valuesWithCSVFormat = string.Join(",",paramValues);
+            await DisplayAlert("Preview", valuesWithCSVFormat, "OK");
+        }
 
     }
 }
