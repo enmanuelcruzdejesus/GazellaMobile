@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using GazellaMobile.ViewModels;
 using GazellaMobile.Views.Helpers;
 using GazellaMobile.Views.CustomControls;
+using GazellaMobile.Utils.System;
 
 namespace GazellaMobile.Views
 {
@@ -15,6 +16,7 @@ namespace GazellaMobile.Views
         ReportParamViewModel _vm;
         dynamic[] _parameters;
         List<View> _listOfControls;
+
         public ReportParamPage(ReportParamViewModel viewModel)
         {
             this.Title = "Parametros";
@@ -91,18 +93,15 @@ namespace GazellaMobile.Views
                         }
                         else
                         {
-                            var value1 = entry.CustomText;
-                            var value2 = entry.CustomText;
-                            paramValues.Add(value1);
-                            paramValues.Add(value2);
+                            paramValues.Add(entry.CustomText);
+                            paramValues.Add(entry.CustomText);
                         }
 
                     }
                     else
                     {
-                        
                         paramValues.Add(entry.Text);
-
+                       
                     }
                 }
                 else if (_listOfControls[i] is Entry)
@@ -125,16 +124,15 @@ namespace GazellaMobile.Views
                         }
                         else
                         {
-                            var value1 = entry.Text;
-                            var value2 = entry.Text;
-                            paramValues.Add(value1);
-                            paramValues.Add(value2);
+                            paramValues.Add(entry.Text);
+                            paramValues.Add(entry.Text);
                         }
 
                     }
                     else
                     {
                         paramValues.Add(entry.Text);
+                      
                       
                     }
 
@@ -143,6 +141,7 @@ namespace GazellaMobile.Views
                 {
                     DatePicker date = (DatePicker)_listOfControls[i];
                     paramValues.Add(date.Date.ToString("yyyy/MM/dd/HH:mm:ss"));
+                 
                 
                 }
                 else if (_listOfControls[i] is Picker)
@@ -150,17 +149,30 @@ namespace GazellaMobile.Views
                     Picker pick = (Picker)_listOfControls[i];
                     var key = pick.SelectedItem.ToString().Split('.');
                     paramValues.Add(key[0]);
+
                 }
                 else if (_listOfControls[i] is Switch)
                 {
                     Switch sw = (Switch)_listOfControls[i];
-                    paramValues.Add(sw.IsToggled.ToString());
+                    var value = sw.IsToggled ? 0 : 1;
+                    paramValues.Add(value.ToString());
                 }
+
 
             }
 
+            for (int i = 0; i < paramValues.Count(); i++)
+            {
+                paramValues[i] = string.Format("Param{0}={1}", i, paramValues[i]);
+            }
+
             var valuesWithCSVFormat = string.Join(",",paramValues);
-            await DisplayAlert("Preview", valuesWithCSVFormat, "OK");
+            //Displaying Report
+            var reportId = _vm.ReportId;
+            var requestData = string.Format("VALIDTIME=13/03/2019,ReportId={1},CIA={2},User={3}",DateTime.Now.ToString("dd/MM/yyyy"),reportId,App.Cia,App.CurrentUser.UserId.ToUpper());
+            Console.WriteLine(requestData);
+            Device.OpenUri(new Uri(string.Format("http://gazella.ddns.net/webreport/gowebReport.exe?RequestData={0}&RequestParam={1}",requestData.EncodeBase64(),valuesWithCSVFormat.EncodeBase64())));
+
         }
 
     }

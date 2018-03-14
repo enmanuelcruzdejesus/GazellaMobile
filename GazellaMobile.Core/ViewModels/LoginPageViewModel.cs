@@ -89,7 +89,7 @@ namespace GazellaMobile.ViewModels
                 ServerSettingsDialog dialog = new ServerSettingsDialog(vm);
 
                 //Creating the Transparent Popup Page
-                //of type string since we need a string return
+                //of type bool since we need a bool return
                 _popup = new InputDialogBase<bool>(dialog);
 
                 vm.ClickEventHandler += async delegate

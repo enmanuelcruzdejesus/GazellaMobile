@@ -13,6 +13,10 @@ namespace GazellaMobile.ViewModels
         {
             _reportId = ReportId;
         }
+        public int ReportId
+        {
+            get { return _reportId; }
+        }
         public Task<dynamic[]> Data
         {
             get
